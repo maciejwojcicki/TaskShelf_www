@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--This file represents the results of running a test suite-->
+<test-results name="D:\github\TaskShelf\tests\bin\Debug\tests.dll" total="1" errors="1" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2015-04-04" time="16:12:55">
+  <environment nunit-version="2.6.4.14350" clr-version="2.0.50727.8009" os-version="Microsoft Windows NT 6.2.9200.0" platform="Win32NT" cwd="C:\Program Files (x86)\NUnit 2.6.4\bin" machine-name="STACJONARNY" user="mike0_000" user-domain="STACJONARNY" />
+  <culture-info current-culture="pl-PL" current-uiculture="pl-PL" />
+  <test-suite type="Assembly" name="D:\github\TaskShelf\tests\bin\Debug\tests.dll" executed="True" result="Failure" success="False" time="8.984" asserts="0">
+    <results>
+      <test-suite type="Namespace" name="tests" executed="True" result="Failure" success="False" time="8.983" asserts="0">
+        <results>
+          <test-suite type="TestFixture" name="UserServiceTests" executed="True" result="Failure" success="False" time="8.983" asserts="0">
+            <results>
+              <test-case name="tests.UserServiceTests.AdminLogin" executed="True" result="Error" success="False" time="8.982" asserts="0">
+                <failure>
+                  <message><![CDATA[implementations.Exceptions.PermissionException : Zgłoszono wyjątek typu 'implementations.Exceptions.PermissionException'.]]></message>
+                  <stack-trace><![CDATA[w implementations.Services.UserService.Login(LoginModel model) w d:\github\TaskShelf\implementations\Services\UserService.cs:wiersz 58
+w tests.UserServiceTests.AdminLogin() w d:\github\TaskShelf\tests\UserServiceTests.cs:wiersz 38
+]]></stack-trace>
+                </failure>
+              </test-case>
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results>
