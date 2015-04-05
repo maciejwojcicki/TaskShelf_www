@@ -53,7 +53,6 @@ D:\github\TaskShelf_www\TaskShelf_www\bin\Microsoft.Owin.Security.MicrosoftAccou
 D:\github\TaskShelf_www\TaskShelf_www\obj\Debug\TaskShelf_www.csprojResolveAssemblyReference.cache
 D:\github\TaskShelf_www\TaskShelf_www\obj\Debug\TaskShelf_www.dll
 D:\github\TaskShelf_www\TaskShelf_www\obj\Debug\TaskShelf_www.pdb
-E:\Projekt2\TaskShelf_www\TaskShelf_www\obj\Debug\TaskShelf_www.csprojResolveAssemblyReference.cache
 E:\Projekt2\TaskShelf_www\TaskShelf_www\obj\Debug\TaskShelf_www.dll
 E:\Projekt2\TaskShelf_www\TaskShelf_www\obj\Debug\TaskShelf_www.pdb
 E:\Projekt2\TaskShelf_www\TaskShelf_www\bin\TaskShelf_www.dll.config
