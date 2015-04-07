@@ -117,3 +117,4 @@ E:\Projekt2\TaskShelf_www\TaskShelf_www\bin\implementations.pdb
 E:\Projekt2\TaskShelf_www\TaskShelf_www\bin\log4net.xml
 E:\Projekt2\TaskShelf_www\TaskShelf_www\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
 E:\Projekt2\TaskShelf_www\TaskShelf_www\bin\System.Web.Providers.dll
+E:\Projekt2\TaskShelf_www\TaskShelf_www\obj\Debug\TaskShelf_www.csprojResolveAssemblyReference.cache
