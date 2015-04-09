@@ -18,8 +18,13 @@ namespace TaskShelf_www.Parts.User
         {
             userService = new UserService();
         }
-        // GET: User
+        [ChildActionOnly]
         public ActionResult LoginBox()
+        {
+            return View();
+        }
+        [ChildActionOnly]
+        public ActionResult RegisterBox()
         {
             return View();
         }
@@ -52,5 +57,6 @@ namespace TaskShelf_www.Parts.User
 
             return Json(JsonReturns.Redirect("/Board/Index"), JsonRequestBehavior.AllowGet);
         }
+        
     }
 }

@@ -17,6 +17,7 @@ userLoginbox.app = Backbone.View.extend({
         this.listenTo(Backbone, "ValidationError", this.validationError);
     },
     validationError: function (event) {
+        console.log('val');
         if (event.cid == this.cid) {
             this.$el.find('.validation-field-error').remove();
             this.$el.find('[name=' + event.Data.Property + ']').after('<span class="validation-field-error">' + event.Data.Message + '</span>')

@@ -187,6 +187,7 @@
     <Compile Include="Parts\ErrorController.cs" />
     <Compile Include="Parts\Home\HomeController.cs" />
     <Compile Include="Parts\User\Model\LoginModel.cs" />
+    <Compile Include="Parts\User\Model\RegisterModel.cs" />
     <Compile Include="Parts\User\UserController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -199,22 +200,38 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Parts\User\Scripts\bb-userLoginbox.js" />
+    <Content Include="Scripts\ajaxform.js" />
+    <Content Include="Scripts\backbone.js" />
+    <Content Include="Scripts\backbone.min.js" />
+    <Content Include="Scripts\bb-eventHandlers.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Parts\User\Web.config" />
     <Content Include="Parts\User\Views\LoginBox.cshtml" />
+    <Content Include="Scripts\backbone.min.map" />
+    <Content Include="Parts\Web.config" />
+    <Content Include="Parts\_ViewStart.cshtml" />
     <Content Include="Parts\Home\Views\Index.cshtml" />
+    <Content Include="Parts\User\Views\RegisterBox.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui-1.8.24.js" />
+    <Content Include="Scripts\jquery-ui-1.8.24.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\knockout-2.2.0.debug.js" />
+    <Content Include="Scripts\knockout-2.2.0.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\npm.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\underscore.js" />
+    <Content Include="Scripts\underscore.min.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -228,13 +245,11 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Scripts\underscore.min.map" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Parts\User\Styles\" />
-    <Folder Include="Views\Error\" />
-    <Folder Include="Views\Home\" />
-    <Folder Include="Views\User\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

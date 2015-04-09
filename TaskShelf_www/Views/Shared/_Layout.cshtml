@@ -7,8 +7,8 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
-    <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.0.0/backbone-min.js"></script>
+    @*<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.0.0/backbone-min.js"></script>*@
 </head>
 <body>
     <div id="error-messages"></div>
@@ -42,7 +42,6 @@
     })(Backbone.View);
     </script>
 
-    @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
     @Html.RenderScripts()
     @Html.RenderCss()
