@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
 using TaskShelf_www.App_Start;
+using TaskShelf_www.Parts.User.Model;
 
 namespace TaskShelf_www.Parts.User
 {
@@ -23,11 +24,32 @@ namespace TaskShelf_www.Parts.User
         {
             return View();
         }
+
         [ChildActionOnly]
+        [HttpGet]
         public ActionResult RegisterBox()
         {
             return View();
         }
+
+        [AjaxOnly]
+        [HttpPost]
+        public ActionResult RegisterUser(core.Models.RegisterModel model)
+        {
+            try 
+            {
+                userService.Register(model);
+            }
+            catch(implementations.Exceptions.LoginInUseException)
+            {
+                return Json(JsonReturns.Redirect("/User/LoginInUseException"), JsonRequestBehavior.AllowGet);
+            }
+           
+                
+            
+            return Json(JsonReturns.Redirect("/Home/Index"), JsonRequestBehavior.AllowGet);
+        }
+
 
         [AjaxOnly]
         [HttpPost]

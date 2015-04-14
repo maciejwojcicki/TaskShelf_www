@@ -200,6 +200,7 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Parts\User\Scripts\bb-userLoginbox.js" />
+    <Content Include="Parts\User\Scripts\bb-userRegisterbox.js" />
     <Content Include="Scripts\ajaxform.js" />
     <Content Include="Scripts\backbone.js" />
     <Content Include="Scripts\backbone.min.js" />
