@@ -47,7 +47,7 @@ namespace TaskShelf_www.Parts.User
            
                 
             
-            return Json(JsonReturns.Redirect("/Home/Index"), JsonRequestBehavior.AllowGet);
+            return Json(JsonReturns.Redirect("/User/Index"), JsonRequestBehavior.AllowGet);
         }
 
 
@@ -77,7 +77,19 @@ namespace TaskShelf_www.Parts.User
             HttpCookie authCookie = new HttpCookie(FormsAuthentication.FormsCookieName, encTicket);
             Response.Cookies.Add(authCookie);
 
-            return Json(JsonReturns.Redirect("/Board/Index"), JsonRequestBehavior.AllowGet);
+            return Json(JsonReturns.Redirect("/Home/Test"), JsonRequestBehavior.AllowGet);
+        }
+        [HttpGet]
+        public ActionResult LoginInUseException()
+        {
+            return View();
+        }
+        public ActionResult LoginNow()
+        {
+            
+            ViewBag.a =userService.GetCurrentUser(User).Name;
+            return View();
+
         }
         
     }
