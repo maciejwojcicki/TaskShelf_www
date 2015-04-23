@@ -8,7 +8,7 @@ namespace TaskShelf_www
     {
         public void Configuration(IAppBuilder app)
         {
-            ConfigureAuth(app);
+            
         }
     }
 }

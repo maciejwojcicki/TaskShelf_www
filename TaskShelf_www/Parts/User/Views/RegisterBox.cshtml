@@ -1,0 +1,40 @@
+﻿@model TaskShelf_www.Parts.User.Model.RegisterModel
+<div id="userRegisterbox" class="row">
+    <div class="col-sm-12">
+        <div class="display-table header">
+            Zarejestruj się
+        </div>
+        <div class="row register-row">
+            <div class="col-sm-12">
+                <input class="input-l" type="text" name="Login" placeholder="Login" />
+            </div>
+        </div>
+        <div class="row register-row">
+            <div class="col-sm-12">
+                <input class="input-l" type="password" name="Password" placeholder="Hasło" />
+            </div>
+        </div>
+        <div class="row register-row">
+            <div class="col-sm-12">
+                <input class="input-l" type="password" name="ConfirmPassword" placeholder="Powtórz hasło" />
+            </div>
+        </div>
+        <div class="row register-row">
+            <div class="col-sm-12">
+                <input class="input-l" type="text" name="Name" placeholder="Nazwa użytkownika" />
+            </div>
+        </div>
+        <div class="row register-row">
+            <div class="col-sm-12">
+                <input class="input-l" type="text" name="Email" placeholder="E-mail" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <button class="btn-xl">Zarejestruj</button>
+            </div>
+        </div>
+    </div>
+</div>
+@Html.AddScript("/Parts/User/Scripts/bb-userRegisterbox.js")
+@Html.ExecuteScript("new userRegisterbox.app();")

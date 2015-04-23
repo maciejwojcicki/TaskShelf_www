@@ -6,39 +6,44 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
+    @Scripts.Render("~/bundles/jquery")
+    @*<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.0.0/backbone-min.js"></script>*@
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
-                @Html.Partial("_LoginPartial")
-            </div>
-        </div>
-    </div>
-    <div class="container body-content">
+    <div id="error-messages"></div>
+    <div id="info-messages"></div>
+    
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
+        <script type="text/template" id="error-message-template">
+            <div>
+                <%=Data.Message%>
+            </div>
+        </script>
+        <script type="text/template" id="info-message-template">
+            <div>
+                <%=Data.Message%>
+            </div>
+        </script>
+            
+
+    
+    <script>
+    // Compatibility override - Backbone 1.1 got rid of the 'options' binding
+    // automatically to views in the constructor - we need to keep that.
+    Backbone.View = (function (View) {
+        return View.extend({
+            constructor: function (options) {
+                this.options = options || {};
+                View.apply(this, arguments);
+            }
+        });
+    })(Backbone.View);
+    </script>
+
     @RenderSection("scripts", required: false)
+    @Html.RenderScripts()
+    @Html.RenderCss()
 </body>
 </html>

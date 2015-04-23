@@ -1,0 +1,20 @@
+﻿<div id="userLoginbox">
+    <div class="row">
+        <div class="col-sm-12 login-input">
+            <input class="input-m" type="text" name="Login" placeholder="Login" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 password-input">
+            <input class="input-m" type="password" name="Password" placeholder="Hasło" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <button class="btn-xl">Zaloguj</button>
+        </div>
+    </div>
+</div>
+
+@Html.AddScript("/Parts/User/Scripts/bb-userLoginbox.js")
+@Html.ExecuteScript("new userLoginbox.app();")
