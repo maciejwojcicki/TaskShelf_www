@@ -7,23 +7,27 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
 using TaskShelf_www.App_Start;
+using TaskShelf_www.Parts.Project.Model;
 
 namespace TaskShelf_www.Parts.Project
 {
     public class ProjectController : Controller
     {
         IProjectService projectService = null;
-        ProjectController()
+        public ProjectController()
         {
             projectService = new ProjectService();
         }
+
         // GET: Project
         [ChildActionOnly]
-        public ActionResult Index()
+        public ActionResult Index(core.Models.ProjectModel model)
         {
             //var projectData = projectService.GetProjects(User);
-            //ViewBag.user = User;
-            return View();
+            var test = projectService.GetProjects(User,model);
+            return View(test);
+
+            //return View();
         }
     }
 }

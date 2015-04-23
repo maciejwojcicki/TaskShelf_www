@@ -47,7 +47,7 @@ namespace TaskShelf_www.Parts.User
            
                 
             
-            return Json(JsonReturns.Redirect("/User/Index"), JsonRequestBehavior.AllowGet);
+            return Json(JsonReturns.Redirect("/Home/Index"), JsonRequestBehavior.AllowGet);
         }
 
 

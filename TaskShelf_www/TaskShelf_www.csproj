@@ -186,6 +186,7 @@
     </Compile>
     <Compile Include="Parts\ErrorController.cs" />
     <Compile Include="Parts\Home\HomeController.cs" />
+    <Compile Include="Parts\Project\Model\ProjectModel.cs" />
     <Compile Include="Parts\Project\ProjectController.cs" />
     <Compile Include="Parts\User\Model\LoginModel.cs" />
     <Compile Include="Parts\User\Model\RegisterModel.cs" />
@@ -254,11 +255,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Parts\Project\Model\" />
     <Folder Include="Parts\Project\Scripts\" />
     <Folder Include="Parts\Project\Styles\" />
     <Folder Include="Parts\User\Styles\" />
-    <Folder Include="Views\Project\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
