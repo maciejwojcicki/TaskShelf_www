@@ -118,3 +118,13 @@ E:\Projekt2\TaskShelf_www\TaskShelf_www\bin\Microsoft.Owin.Security.MicrosoftAcc
 E:\Projekt2\TaskShelf_www\TaskShelf_www\obj\Debug\TaskShelf_www.dll
 E:\Projekt2\TaskShelf_www\TaskShelf_www\obj\Debug\TaskShelf_www.pdb
 E:\Projekt2\TaskShelf_www\TaskShelf_www\obj\Debug\TaskShelf_www.csprojResolveAssemblyReference.cache
+D:\github\TaskShelf_www\TaskShelf_www\bin\core.dll
+D:\github\TaskShelf_www\TaskShelf_www\bin\database.dll
+D:\github\TaskShelf_www\TaskShelf_www\bin\implementations.dll
+D:\github\TaskShelf_www\TaskShelf_www\bin\log4net.dll
+D:\github\TaskShelf_www\TaskShelf_www\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+D:\github\TaskShelf_www\TaskShelf_www\bin\System.Web.Providers.dll
+D:\github\TaskShelf_www\TaskShelf_www\bin\core.pdb
+D:\github\TaskShelf_www\TaskShelf_www\bin\database.pdb
+D:\github\TaskShelf_www\TaskShelf_www\bin\implementations.pdb
+D:\github\TaskShelf_www\TaskShelf_www\bin\log4net.xml
