@@ -7,7 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
 using TaskShelf_www.App_Start;
-using TaskShelf_www.Parts.User.Model;
+using TaskShelf_www.Parts.User.Models;
 
 namespace TaskShelf_www.Parts.User
 {
@@ -77,7 +77,7 @@ namespace TaskShelf_www.Parts.User
             HttpCookie authCookie = new HttpCookie(FormsAuthentication.FormsCookieName, encTicket);
             Response.Cookies.Add(authCookie);
 
-            return Json(JsonReturns.Redirect("/Home/Test"), JsonRequestBehavior.AllowGet);
+            return Json(JsonReturns.Redirect("/Project/Index"), JsonRequestBehavior.AllowGet);
         }
         [HttpGet]
         public ActionResult LoginInUseException()

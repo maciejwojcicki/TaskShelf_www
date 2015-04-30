@@ -7,7 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
 using TaskShelf_www.App_Start;
-using TaskShelf_www.Parts.Project.Model;
+using TaskShelf_www.Parts.Project.Models;
 
 namespace TaskShelf_www.Parts.Project
 {
@@ -20,14 +20,36 @@ namespace TaskShelf_www.Parts.Project
         }
 
         // GET: Project
+    
+        public ActionResult Index()
+        {
+            return View();
+        }
+
         [ChildActionOnly]
-        public ActionResult Index(core.Models.ProjectModel model)
+        public ActionResult ProjectList()
+        {
+            return View();                                                                                                                                                                                              
+        }
+
+        [HttpGet]
+        public ActionResult Projects()
         {
             //var projectData = projectService.GetProjects(User);
-            var test = projectService.GetProjects(User,model);
-            return View(test);
+            var test = projectService.GetProjects(User);
+            ////return View(test);
+            //ProjectModel model = new ProjectModel() { Projects = test };
+            ////modell.Projects = test;
 
-            //return View();
+            return Json(new 
+            { 
+                Projects = test.Select(s=> new{
+                    Name = s.Name
+                }
+
+                ),
+                HasMore = true
+            }, JsonRequestBehavior.AllowGet);
         }
     }
 }

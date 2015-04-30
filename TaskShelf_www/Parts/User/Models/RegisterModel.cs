@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace TaskShelf_www.Parts.User.Model
+namespace TaskShelf_www.Parts.User.Models
 {
     public class RegisterModel
     {

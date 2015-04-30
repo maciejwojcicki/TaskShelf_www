@@ -13,9 +13,6 @@ namespace TaskShelf_www.Parts.Home
         {
             return View();
         }
-        public ActionResult Test()
-        {
-            return View();
-        }
+        
     }
 }

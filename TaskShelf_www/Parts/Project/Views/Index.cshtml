@@ -1,8 +1,8 @@
-﻿@model TaskShelf_www.Parts.Project.Model.ProjectModel
-
-
-ala
-@foreach(var item in Model.Projects)
-{
-   <div>item.Name</div> 
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+@Html.Action("ProjectList", "Project")
+
+
+
