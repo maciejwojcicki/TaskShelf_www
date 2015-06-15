@@ -186,7 +186,7 @@
     </Compile>
     <Compile Include="Parts\ErrorController.cs" />
     <Compile Include="Parts\Home\HomeController.cs" />
-    <Compile Include="Parts\Project\Models\ProjectModel.cs" />
+    <Compile Include="Parts\Project\Models\CreateProjectModel.cs" />
     <Compile Include="Parts\Project\ProjectController.cs" />
     <Compile Include="Parts\User\Models\LoginModel.cs" />
     <Compile Include="Parts\User\Models\RegisterModel.cs" />
@@ -201,6 +201,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Parts\Project\Scripts\bb-createProject.js" />
     <Content Include="Parts\Project\Scripts\bb-projectList.js" />
     <Content Include="Parts\User\Scripts\bb-userLoginbox.js" />
     <Content Include="Parts\User\Scripts\bb-userRegisterbox.js" />
@@ -218,7 +219,8 @@
     <Content Include="Parts\User\Views\RegisterBox.cshtml" />
     <Content Include="Parts\Project\Views\Index.cshtml" />
     <Content Include="Parts\User\Views\LoginNow.cshtml" />
-    <Content Include="Parts\Project\Views\ProjectList.cshtml" />
+    <Content Include="Parts\Project\Views\ProjectListView.cshtml" />
+    <Content Include="Parts\Project\Views\CreateProjectView.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

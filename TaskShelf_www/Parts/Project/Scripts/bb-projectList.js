@@ -5,7 +5,7 @@ projectList.projectListModel = Backbone.Model.extend({
         Projects: new Array(),
         HasMore: false
     },
-    urlRoot: '/Project/Projects'
+    urlRoot: '/Project/ProjectList'
 });
 
 projectList.projectModel = Backbone.Model.extend({
@@ -41,7 +41,6 @@ projectList.app = Backbone.View.extend({
         //console.log("dupa");
         //this.$el.find('.projectList').html(
         //    new projectList.projectView().render().el)
-        //console.log("dupa2");
         this.initialLoad();
     },
     initialLoad: function () {
@@ -53,7 +52,6 @@ projectList.app = Backbone.View.extend({
                 count: 5
             },
             success: function () {
-
                 var projects = projectListModel.get('Projects');
                 console.log(projects)
                 _.each(projects, function (project) {

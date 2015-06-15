@@ -1,0 +1,28 @@
+﻿@{
+    Layout = null;
+}
+<div id="createProject" class="row">
+    <div class="col-xs-12">
+        lub utwórz nowy:
+
+        <div class="row">
+            <div class="col-sm-4">
+                <label>Nazwa projektu</label>
+                <input class="form-control" type="text" name="Name" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <label>Grafika</label>
+                <input type="file" name="ImageThumbnail" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <button class="btn-xl">Utwórz</button>
+            </div>
+        </div>
+    </div>
+</div>
+@Html.AddScript("/Parts/Project/Scripts/bb-createProject.js")
+@Html.ExecuteScript("new createProject.app();")

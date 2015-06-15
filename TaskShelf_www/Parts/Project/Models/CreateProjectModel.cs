@@ -5,8 +5,9 @@ using System.Web;
 
 namespace TaskShelf_www.Parts.Project.Models
 {
-    public class ProjectModel
+    public class CreateProjectModel
     {
-        public List<database.Entities.Project> Projects { get; set; }
+        public string Name { get; set; }
+        public string ImageThumbnail { get; set; }
     }
 }

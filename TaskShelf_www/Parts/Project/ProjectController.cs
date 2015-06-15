@@ -27,19 +27,20 @@ namespace TaskShelf_www.Parts.Project
         }
 
         [ChildActionOnly]
-        public ActionResult ProjectList()
+        public ActionResult ProjectListView()
         {
             return View();                                                                                                                                                                                              
         }
+        [ChildActionOnly]
+        public ActionResult CreateProjectView()
+        {
+            return View();
+        }
 
         [HttpGet]
-        public ActionResult Projects()
+        public ActionResult ProjectList()
         {
-            //var projectData = projectService.GetProjects(User);
             var test = projectService.GetProjects(User);
-            ////return View(test);
-            //ProjectModel model = new ProjectModel() { Projects = test };
-            ////modell.Projects = test;
 
             return Json(new 
             { 
@@ -50,6 +51,15 @@ namespace TaskShelf_www.Parts.Project
                 ),
                 HasMore = true
             }, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        [AjaxOnly]
+        public ActionResult CreateProject(core.Models.CreateProjectModel model)
+        {
+            projectService.CreateProject(model, User);
+
+            return Json(JsonReturns.Redirect("/Project/Index"), JsonRequestBehavior.AllowGet);
         }
     }
 }

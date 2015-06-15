@@ -1,8 +1,10 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-@Html.Action("ProjectList", "Project")
+<div class="container">
+    @Html.Action("ProjectListView", "Project")
+    @Html.Action("CreateProjectView", "Project")
+</div>
 
 
 
