@@ -8,19 +8,36 @@ projectList.projectListModel = Backbone.Model.extend({
     urlRoot: '/Project/ProjectList'
 });
 
-projectList.projectModel = Backbone.Model.extend({
-    defaults: {
-        Name: "",
-        CreateDate: null,
-        Owner: "",
+    projectList.projectModel = Backbone.Model.extend({
+        defaults: {
+            ProjectId: null,
+            Name: "",
+            CreateDate: null,
+            Owner: "",
         Description: "",
         Url: ""
     }
 });
 
 projectList.projectView = Backbone.View.extend({
+    events:{
+        'click a': 'projectClick'
+    },
     initialize: function () {
         this.template = _.template($('#projectView-template').html());
+    },
+    projectClick: function(){
+        var model = this.model;
+        console.log(model.get('ProjectId'));
+
+        var now = new Date();
+        var time = now.getTime;
+        var expireTime = time + 1000 * 36000;
+        now.setTime(expireTime);
+        document.cookie = 'ProjectId=' + model.get('ProjectId') + ';expires=' + now.toGMTString() + ';path=/';
+
+        console.log(document.cookie)
+        window.location.href = model.get('Url');
     },
     render: function () {
         var self = this;

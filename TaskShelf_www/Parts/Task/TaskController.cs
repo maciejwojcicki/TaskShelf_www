@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using TaskShelf_www.App_Start;
 
 namespace TaskShelf_www.Parts.Task
 {
@@ -12,13 +13,22 @@ namespace TaskShelf_www.Parts.Task
     {
         ITaskService taskService = null;
 
-        TaskController()
+        public TaskController()
         {
             taskService = new TaskService();
         }
         // GET: Task
-        public ActionResult TaskList(int projectId)
+        public ActionResult Index()
         {
+            return View();
+        }
+        public ActionResult TaskListView()
+        {
+            return View();
+        }
+        public ActionResult TaskList()
+        {
+            var projectId = Int32.Parse(Request.Cookies["ProjectId"].Value);
             var task = taskService.GetTasks(User, projectId);
 
             return Json(new

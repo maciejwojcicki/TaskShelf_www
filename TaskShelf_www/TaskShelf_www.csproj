@@ -225,6 +225,7 @@
     <Content Include="Parts\Project\Views\ProjectListView.cshtml" />
     <Content Include="Parts\Project\Views\CreateProjectView.cshtml" />
     <Content Include="Parts\Task\Views\TaskListView.cshtml" />
+    <Content Include="Parts\Task\Views\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -266,7 +267,6 @@
     <Folder Include="Parts\Task\Models\" />
     <Folder Include="Parts\Task\Styles\" />
     <Folder Include="Parts\User\Styles\" />
-    <Folder Include="Views\Task\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

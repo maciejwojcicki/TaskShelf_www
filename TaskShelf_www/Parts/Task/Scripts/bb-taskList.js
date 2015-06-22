@@ -2,18 +2,15 @@
 
 taskList.taskListModel = Backbone.Model.extend({
     defaults: {
-        tasks: new Array(),
+        Tasks: new Array(),
         HasMore: false
     },
-    urlRoot: '/task/taskList'
+    urlRoot: '/Task/TaskList'
 });
 
 taskList.taskModel = Backbone.Model.extend({
     defaults: {
-        Name: "",
-        CreateDate: null,
-        Owner: "",
-        Description: ""
+        Name: ''
     }
 });
 
@@ -24,6 +21,8 @@ taskList.taskView = Backbone.View.extend({
     render: function () {
         var self = this;
         this.$el.html(this.template(this.model.toJSON()));
+
+       
 
         return this;
     }
@@ -37,7 +36,7 @@ taskList.app = Backbone.View.extend({
     initialize: function () {
         var self = this;
         this.model = new taskList.taskListModel();
-
+        console.log(document.cookie);
         //console.log("dupa");
         //this.$el.find('.taskList').html(
         //    new taskList.taskView().render().el)
@@ -52,7 +51,7 @@ taskList.app = Backbone.View.extend({
                 count: 5
             },
             success: function () {
-                var taks = taskListModel.get('Tasks');
+                var tasks = taskListModel.get('Tasks');
                 console.log(tasks)
                 _.each(tasks, function (task) {
                     var taskModel = new taskList.taskModel(task);

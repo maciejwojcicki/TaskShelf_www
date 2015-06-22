@@ -45,8 +45,9 @@ namespace TaskShelf_www.Parts.Project
             return Json(new 
             { 
                 Projects = test.Select(s=> new{
+                    ProjectId = s.Project.ProjectId,
                     Name = s.Project.Name,
-                    Url = System.Configuration.ConfigurationManager.AppSettings["Domain"] + "Task/TaskListView"
+                    Url = System.Configuration.ConfigurationManager.AppSettings["Domain"] + "Task/Index"
                 }
 
                 ),
