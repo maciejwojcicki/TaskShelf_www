@@ -13,7 +13,8 @@ projectList.projectModel = Backbone.Model.extend({
         Name: "",
         CreateDate: null,
         Owner: "",
-        Description: ""
+        Description: "",
+        Url: ""
     }
 });
 
