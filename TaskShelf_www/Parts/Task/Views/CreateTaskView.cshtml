@@ -1,0 +1,40 @@
+﻿@model TaskShelf_www.Parts.Task.Models.CreateTaskModel
+<div id="createTask" class="row">
+    <div class="col-xs-12">
+            <div class="row">
+                <div class="col-sm-4">
+                    <label>Nazwa zgłoszenia</label>
+                    <input class="form-control" type="text" name="Name" />
+                </div>
+                <div class="col-sm-4">
+                    <label>Oczekiwany czas wykonania</label>
+                    <input class="form-control" type="text" name="ExpectedWorkTime" />
+                </div>
+                <div class="col-sm-4">
+                    <select name="Type">
+                        @*<option value="0">Wybierz</option>
+                        @foreach (var item in Model.Tasks)
+                        {
+                            <option>@item.Type</option>
+                        }
+                    </select>
+                    <select name="Status">
+                        <option value="0">Wybierz</option>
+                        @foreach (var item in Model.Tasks)
+                        {
+                            <option>@item.Status</option>
+                        }*@
+                    </select>
+                    <label>Oczekiwany czas wykonania</label>
+                    <input class="form-control" type="text" name="ExpectedWorkTime" />
+                </div>
+            </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <button class="btn-xl">Utwórz</button>
+            </div>
+        </div>
+    </div>
+</div>
+@Html.AddScript("/Parts/Task/Scripts/bb-createTask.js")
+@Html.ExecuteScript("new createTask.app();")

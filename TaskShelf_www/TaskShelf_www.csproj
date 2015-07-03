@@ -189,6 +189,7 @@
     <Compile Include="Parts\Home\HomeController.cs" />
     <Compile Include="Parts\Project\Models\CreateProjectModel.cs" />
     <Compile Include="Parts\Project\ProjectController.cs" />
+    <Compile Include="Parts\Task\Models\CreateTaskModel.cs" />
     <Compile Include="Parts\Task\TaskController.cs" />
     <Compile Include="Parts\User\Models\LoginModel.cs" />
     <Compile Include="Parts\User\Models\RegisterModel.cs" />
@@ -205,6 +206,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Parts\Project\Scripts\bb-createProject.js" />
     <Content Include="Parts\Project\Scripts\bb-projectList.js" />
+    <Content Include="Parts\Task\Scripts\bb-createTask.js" />
     <Content Include="Parts\Task\Scripts\bb-taskList.js" />
     <Content Include="Parts\User\Scripts\bb-userLoginbox.js" />
     <Content Include="Parts\User\Scripts\bb-userRegisterbox.js" />
@@ -226,6 +228,7 @@
     <Content Include="Parts\Project\Views\CreateProjectView.cshtml" />
     <Content Include="Parts\Task\Views\TaskListView.cshtml" />
     <Content Include="Parts\Task\Views\Index.cshtml" />
+    <Content Include="Parts\Task\Views\CreateTaskView.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -264,7 +267,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Parts\Project\Styles\" />
-    <Folder Include="Parts\Task\Models\" />
     <Folder Include="Parts\Task\Styles\" />
     <Folder Include="Parts\User\Styles\" />
   </ItemGroup>
