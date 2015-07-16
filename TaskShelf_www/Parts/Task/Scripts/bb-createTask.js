@@ -4,7 +4,7 @@ createTask.createTaskModel = Backbone.Model.extend({
     defaults: {
         Name: ''
     },
-    urlRoot: '/Task/CreateTask'
+    urlRoot: '/Task/CreateTaskModel'
 });
 
 createTask.app = Backbone.View.extend({

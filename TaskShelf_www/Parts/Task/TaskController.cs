@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using TaskShelf_www.App_Start;
+using TaskShelf_www.Helpers;
 using TaskShelf_www.Parts.Task.Models;
 
 namespace TaskShelf_www.Parts.Task
@@ -30,22 +31,19 @@ namespace TaskShelf_www.Parts.Task
         }
         public ActionResult CreateTaskView()
         {
-            CreateTaskModel model = new CreateTaskModel();
-
-            List<database.Entities.Task.TaskStatus> test = new List<database.Entities.Task.TaskStatus>();
-            //test.Add(model.Statuses.);
-                foreach(var item in test)
-                {
-                    item.ToString();
-                }
-            foreach(var value in Enum.GetValues(typeof(database.Entities.Task.TaskStatus)))
-            {
-                value.ToString();
-            }
-                //var value in Enum.GetValues(typeof(SignMagnitude)
-                //Language[] result = (Language[])Enum.GetValues(typeof(Language))
-
             return View();
+        }
+        public ActionResult CreateTaskModel()
+        {
+           
+           
+            var values = EnumHelper.GetValues<database.Entities.Task.TaskStatus>().Select(x => new
+            {
+                Name = EnumHelper.GetEnumDescription(x),
+                Value = (int)x
+            });
+            return Json(values, JsonRequestBehavior.AllowGet);
+
         }
         public ActionResult TaskList()
         {
