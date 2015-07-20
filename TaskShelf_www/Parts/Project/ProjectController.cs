@@ -14,9 +14,11 @@ namespace TaskShelf_www.Parts.Project
     public class ProjectController : Controller
     {
         IProjectService projectService = null;
+        ILabelService labelService = null;
         public ProjectController()
         {
             projectService = new ProjectService();
+            labelService = new LabelService();
         }
 
         // GET: Project
@@ -40,11 +42,12 @@ namespace TaskShelf_www.Parts.Project
         [HttpGet]
         public ActionResult ProjectList()
         {
-            var test = projectService.GetProjects(User);
+            var GetProjects = projectService.GetProjects(User);
 
             return Json(new 
-            { 
-                Projects = test.Select(s=> new{
+            {
+                Projects = GetProjects.Select(s => new
+                {
                     ProjectId = s.Project.ProjectId,
                     Name = s.Project.Name,
                     Url = System.Configuration.ConfigurationManager.AppSettings["Domain"] + "Task/Index"
@@ -63,5 +66,29 @@ namespace TaskShelf_www.Parts.Project
 
             return Json(JsonReturns.Redirect("/Project/Index"), JsonRequestBehavior.AllowGet);
         }
+
+        #region Labels
+        public ActionResult LabelListView()
+        {
+
+            return View();
+        }
+        public ActionResult LabelList()
+        {
+            var projectId = Int32.Parse(Request.Cookies["ProjectId"].Value);
+            var GetLabels = labelService.GetLabel(projectId);
+            return Json(new
+            {
+                Labels = GetLabels.Select(s => new
+                {
+                    Name = s.Name,
+                }
+
+                ),
+                HasMore = true
+            }, JsonRequestBehavior.AllowGet);
+               
+        }
+        #endregion
     }
 }

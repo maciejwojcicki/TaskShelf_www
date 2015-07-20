@@ -58,7 +58,6 @@ taskList.app = Backbone.View.extend({
                     var taskView = new taskList.taskView({ model: taskModel });
                     self.$el.find('div.tasks-container').append(taskView.render().el)
                 });
-
                 if (taskListModel.get('HasMore')) {
                     self.$el.find('button.show-more').show();
                 } else {

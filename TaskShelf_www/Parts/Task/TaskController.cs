@@ -74,11 +74,11 @@ namespace TaskShelf_www.Parts.Task
         public ActionResult TaskList()
         {
             var projectId = Int32.Parse(Request.Cookies["ProjectId"].Value);
-            var task = taskService.GetTasks(User, projectId);
+            var GetTasks = taskService.GetTasks(User, projectId);
 
             return Json(new
             {
-                 Tasks = task.Select(s => new
+                Tasks = GetTasks.Select(s => new
                 {
                     Name = s.Name
                 }
