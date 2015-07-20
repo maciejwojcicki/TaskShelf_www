@@ -1,40 +1,57 @@
 ﻿@model TaskShelf_www.Parts.Task.Models.CreateTaskModel
-<div id="createTask" class="row">
-    <div class="col-xs-12">
+<div class="container">
+    <div id="createTask" class="row">
+        <div class="col-xs-12">
             <div class="row">
                 <div class="col-sm-4">
                     <label>Nazwa zgłoszenia</label>
                     <input class="form-control" type="text" name="Name" />
                 </div>
+            </div>
+            <div class="row">
                 <div class="col-sm-4">
-                    <label>Oczekiwany czas wykonania</label>
-                    <input class="form-control" type="text" name="ExpectedWorkTime" />
-                </div>
-                <div class="col-sm-4">
-                    <select name="Type">
-                        @*<option value="0">Wybierz</option>
-                        @foreach (var item in Model.Tasks)
-                        {
-                            <option>@item.Type</option>
-                        }
-                    </select>
-                    <select name="Status">
-                        <option value="0">Wybierz</option>
-                        @foreach (var item in Model.Tasks)
-                        {
-                            <option>@item.Status</option>
-                        }*@
-                    </select>
-                    <label>Oczekiwany czas wykonania</label>
-                    <input class="form-control" type="text" name="ExpectedWorkTime" />
+                    <label>Opis</label>
+                    <textarea class="form-control" name="Description"></textarea>
                 </div>
             </div>
-        <div class="row">
-            <div class="col-sm-4">
-                <button class="btn-xl">Utwórz</button>
+            <div class="row">
+                <div class="col-sm-4">
+                    <label>Oczekiwany czas wykonania (h)</label>
+                    <input class="form-control" type="number" name="ExpectedWorkTime" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <select class="types" name="Type">
+                        <option>Wybierz</option>
+                        @foreach (var item in Model.Types)
+                        {
+                            <option value="@item.Key">@item.Value</option>
+                        }
+
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="attachments-container">
+
+                    </div>
+                    <button class="newAttachment">Dodaj nowy</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <button class="btn-xl create">Utwórz</button>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
+<script type="text/template" id="attachmentView-template">
+    <input type="file" name="Attachments"/>
+</script>
+
 @Html.AddScript("/Parts/Task/Scripts/bb-createTask.js")
 @Html.ExecuteScript("new createTask.app();")

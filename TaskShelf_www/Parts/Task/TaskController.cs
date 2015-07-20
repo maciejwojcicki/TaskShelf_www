@@ -1,5 +1,6 @@
 ﻿using implementations.Interfaces;
 using implementations.Services;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,21 +30,46 @@ namespace TaskShelf_www.Parts.Task
 
             return View();
         }
+
         public ActionResult CreateTaskView()
         {
-            return View();
+            CreateTaskModel model = new CreateTaskModel();
+
+            //var statuses = EnumHelper.GetValues<database.Entities.Task.TaskStatus>();
+
+         
+            Dictionary<int, string> types = new Dictionary<int, string>();
+
+            foreach (var item in EnumHelper.GetValues<database.Entities.Task.TaskType>())
+            {
+                types.Add((int)item, EnumHelper.GetEnumDescription(item));
+            }
+            //EnumHelper.ToDictionary(database.Entities.Task.TaskStatus.Completed);
+            //var json = new
+            //{
+            //    TaskStatuses = statuses.Select(s => new
+            //    {
+            //        Name = EnumHelper.GetEnumDescription(s),
+            //        Value = (int)s
+            //    })
+            //};
+            //Dictionary<string, string> values = JsonConvert.DeserializeObject<Dictionary<string, string>>(json);
+            model.Types = types;
+            return View(model);
         }
+        
         public ActionResult CreateTaskModel()
         {
-           
-           
-            var values = EnumHelper.GetValues<database.Entities.Task.TaskStatus>().Select(x => new
-            {
-                Name = EnumHelper.GetEnumDescription(x),
-                Value = (int)x
-            });
-            return Json(values, JsonRequestBehavior.AllowGet);
+            var statuses = EnumHelper.GetValues<database.Entities.Task.TaskStatus>();
 
+            return Json(new
+            {
+                TaskStatuses = statuses.Select(s => new
+                {
+                    Name = EnumHelper.GetEnumDescription(s),
+                    Value = (int)s
+                })
+            }, JsonRequestBehavior.AllowGet);
         }
         public ActionResult TaskList()
         {

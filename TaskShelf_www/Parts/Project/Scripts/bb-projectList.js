@@ -8,12 +8,12 @@ projectList.projectListModel = Backbone.Model.extend({
     urlRoot: '/Project/ProjectList'
 });
 
-    projectList.projectModel = Backbone.Model.extend({
-        defaults: {
-            ProjectId: null,
-            Name: "",
-            CreateDate: null,
-            Owner: "",
+projectList.projectModel = Backbone.Model.extend({
+    defaults: {
+        ProjectId: null,
+        Name: "",
+        CreateDate: null,
+        Owner: "",
         Description: "",
         Url: ""
     }

@@ -37,5 +37,14 @@ namespace TaskShelf_www.Helpers
 
             return description;
         }
+        
+
+        //public static Dictionary<int, string> ToDictionary(this Enum @enum)
+        //{
+        //    var type = @enum.GetType();
+            
+        //    var z = Enum.GetValues(type).Cast<int>().ToDictionary(e => e, e => Enum.GetName(type, e));
+        //    return z;
+        //}
     }
 }

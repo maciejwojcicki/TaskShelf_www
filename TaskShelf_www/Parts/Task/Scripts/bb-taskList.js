@@ -48,7 +48,7 @@ taskList.app = Backbone.View.extend({
         taskListModel.fetch({
             data: {
                 page: 1,
-                count: 5
+                count: 5 
             },
             success: function () {
                 var tasks = taskListModel.get('Tasks');
