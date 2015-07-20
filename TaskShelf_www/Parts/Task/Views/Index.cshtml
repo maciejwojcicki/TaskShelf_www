@@ -1,6 +1,8 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-@Html.ActionLink("Dodaj zgłoszenie", "CreateTaskView")
-@Html.Action("TaskListView", "Task")
+<div class="container">
+    @Html.ActionLink("Dodaj zgłoszenie", "CreateTaskView")
+    @Html.Action("TaskListView", "Task")
+    @Html.Action("LabelListView", "Project")
+</div>
