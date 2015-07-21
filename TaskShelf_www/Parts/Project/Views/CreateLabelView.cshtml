@@ -1,0 +1,21 @@
+﻿@{
+    Layout = null;
+}
+<div id="createLabel" class="row">
+    <div class="col-xs-12">
+        Dodawanie labelki
+        <div class="row">
+            <div class="col-sm-4">
+                <label>Nazwa labelki</label>
+                <input class="form-control" type="text" name="Name" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <button class="btn-x1">Utwórz</button>
+            </div>
+        </div>
+    </div>
+</div>
+@Html.AddScript("/Parts/Project/Scripts/bb-createLabel.js")
+@Html.ExecuteScript("new createLabel.app();")

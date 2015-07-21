@@ -8,6 +8,7 @@ using System.Web.Mvc;
 using System.Web.Security;
 using TaskShelf_www.App_Start;
 using TaskShelf_www.Parts.Project.Models;
+using core.Models;
 
 namespace TaskShelf_www.Parts.Project
 {
@@ -15,19 +16,22 @@ namespace TaskShelf_www.Parts.Project
     {
         IProjectService projectService = null;
         ILabelService labelService = null;
+        IUserService userService = null;
         public ProjectController()
         {
             projectService = new ProjectService();
             labelService = new LabelService();
+            userService = new UserService();
         }
 
         // GET: Project
     
         public ActionResult Index()
         {
+            
             return View();
         }
-
+        #region Project
         [ChildActionOnly]
         public ActionResult ProjectListView()
         {
@@ -62,10 +66,11 @@ namespace TaskShelf_www.Parts.Project
         [AjaxOnly]
         public ActionResult CreateProject(core.Models.CreateProjectModel model)
         {
-            projectService.CreateProject(model, User);
+            projectService.SaveProject(model, User);
 
             return Json(JsonReturns.Redirect("/Project/Index"), JsonRequestBehavior.AllowGet);
         }
+        #endregion
 
         #region Labels
         public ActionResult LabelListView()
@@ -73,6 +78,7 @@ namespace TaskShelf_www.Parts.Project
 
             return View();
         }
+        [HttpGet]
         public ActionResult LabelList()
         {
             var projectId = Int32.Parse(Request.Cookies["ProjectId"].Value);
@@ -88,6 +94,19 @@ namespace TaskShelf_www.Parts.Project
                 HasMore = true
             }, JsonRequestBehavior.AllowGet);
                
+        }
+
+        public ActionResult CreateLabelView()
+        {
+            return View();
+        }
+
+        public ActionResult CreateLabel(CreateLabelModel model)
+        {
+            var projectId = Int32.Parse(Request.Cookies["ProjectId"].Value);
+            labelService.SaveLabel(model, projectId);
+            return Json(JsonReturns.Redirect("/Task/Index"), JsonRequestBehavior.AllowGet);
+
         }
         #endregion
     }
