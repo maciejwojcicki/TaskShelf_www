@@ -1,16 +1,26 @@
 ﻿var createTask = createTask || {};
 
+createTask.attachmentModel = Backbone.Model.extend({
+    defaults: {
+        FileName: ""
+    }
+})
+createTask.attachmentsList = Backbone.Collection.extend({
+    model: createTask.attachmentModel
+})
+
 createTask.createTaskModel = Backbone.Model.extend({
     defaults: {
         Name: "",
-        dupa:"dupa",
         Description: "",
         ExpectedWorkTime: null,
         Type: null,
-        Attachments: new Array()
+        Attachments: new createTask.attachmentsList()
     },
     urlRoot: '/Task/CreateTask'
 });
+
+
 
 createTask.attachmentView = Backbone.View.extend({
     initialize: function () {
@@ -37,6 +47,7 @@ createTask.app = Backbone.View.extend({
     },
     initialize: function () {
         var self = this;
+        self.attachments = new createTask.attachmentsList();
         self.model = new createTask.createTaskModel();
         this.listenTo(Backbone, "ValidationError", this.validationError);
         var attachmentView = new createTask.attachmentView();
@@ -48,7 +59,7 @@ createTask.app = Backbone.View.extend({
             this.$el.find('[name=' + event.Data.Property + ']').after('<span class="validation-field-error">' + event.Data.Message + '</span>')
         }
     },
-    newAttachment: function(event){
+    newAttachment: function (event) {
         var attachmentView = new createTask.attachmentView();
         this.$el.find('div.attachments-container').append(attachmentView.render().el)
     },
@@ -56,32 +67,36 @@ createTask.app = Backbone.View.extend({
         var text = $(e.target).val();
         var name = $(e.target).attr('name');
         this.model.set(name, text);
-        console.log(name)
-        console.log(text);
+
     },
     inputFileChange: function (e) {
-        var name = $(e.target).attr('name');
-        var _array = this.model.get(name);
-        _array.push($(e.target).val().split('\\').pop());
-        this.model.set(name, _array);
+        this.attachments.add([{ FileName: $(e.target).val().split('\\').pop() }])
+        //attachment.set('FileName', $(e.target).val().split('\\').pop());
+        console.log(this.attachments)
+        
+        this.model.set('Attachments', this.attachments);
+
         console.log(this.model)
+        //var name = $(e.target).attr('name');
+        //var array = this.model.get(name);
+        //array.models.push($(e.target).val().split('\\').pop());
+        //console.log(array.models)
+        //this.model.set(name, array.models);
+        //console.log(this.model)
+
     },
     createTaskButtonClick: function (e) {
         var cid = this.cid;
         var self = this.$el;
-
+        console.log(this.model)
         this.model.save(null, {
             success: function (model, response) {
                 response.cid = cid;
                 eventHandlers.publish(response);
-                console.log(model);
-                console.log(response);
             }, error: function (model, response) {
                 var event = jQuery.parseJSON(response.responseText);
                 event.cid = cid;
                 eventHandlers.publish(event);
-                console.log(model);
-                console.log(response);
             }
         });
     }

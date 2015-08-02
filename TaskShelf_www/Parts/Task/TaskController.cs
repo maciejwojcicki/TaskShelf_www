@@ -93,7 +93,17 @@ namespace TaskShelf_www.Parts.Task
         public ActionResult CreateTask(core.Models.CreateTaskModel model)
         {
             var projectId = Int32.Parse(Request.Cookies["ProjectId"].Value);
+
             taskService.CreateTask(model, projectId);
+
+            return Json(JsonReturns.Redirect("/Task/Index"), JsonRequestBehavior.AllowGet);
+        }
+        [HttpPost]
+        [AjaxOnly]
+        public ActionResult UploadAttachment(AttachmentModel model)
+        {
+            var projectId = Int32.Parse(Request.Cookies["ProjectId"].Value);
+            
 
             return Json(JsonReturns.Redirect("/Task/Index"), JsonRequestBehavior.AllowGet);
         }

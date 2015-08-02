@@ -190,6 +190,7 @@
     <Compile Include="Parts\Home\HomeController.cs" />
     <Compile Include="Parts\Project\Models\CreateProjectModel.cs" />
     <Compile Include="Parts\Project\ProjectController.cs" />
+    <Compile Include="Parts\Task\Models\AttachmentModel.cs" />
     <Compile Include="Parts\Task\Models\CreateTaskModel.cs" />
     <Compile Include="Parts\Task\TaskController.cs" />
     <Compile Include="Parts\User\Models\LoginModel.cs" />

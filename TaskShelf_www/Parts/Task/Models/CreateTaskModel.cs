@@ -8,8 +8,9 @@ namespace TaskShelf_www.Parts.Task.Models
 {
     public class CreateTaskModel
     {
+        
         public Dictionary<int, string> Types { get; set; }
-        public Array Attachments { get; set; }
+ 
 
     }
 }
