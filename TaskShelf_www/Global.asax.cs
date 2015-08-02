@@ -130,6 +130,7 @@ namespace TaskShelf_www
                     {
                         HttpContext.Current.User = userService.GetPrincipal(userId);
                         Response.Cookies.Add(authCookie);
+                        
                     }
                     catch (Exception ex)
                     {

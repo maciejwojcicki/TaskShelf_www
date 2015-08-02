@@ -8,24 +8,30 @@ using System.Web.Mvc;
 using System.Web.Security;
 using TaskShelf_www.App_Start;
 using TaskShelf_www.Parts.Project.Models;
+using core.Models;
 
 namespace TaskShelf_www.Parts.Project
 {
     public class ProjectController : Controller
     {
         IProjectService projectService = null;
+        ILabelService labelService = null;
+        IUserService userService = null;
         public ProjectController()
         {
             projectService = new ProjectService();
+            labelService = new LabelService();
+            userService = new UserService();
         }
 
         // GET: Project
     
         public ActionResult Index()
         {
+            
             return View();
         }
-
+        #region Project
         [ChildActionOnly]
         public ActionResult ProjectListView()
         {
@@ -40,11 +46,12 @@ namespace TaskShelf_www.Parts.Project
         [HttpGet]
         public ActionResult ProjectList()
         {
-            var test = projectService.GetProjects(User);
+            var GetProjects = projectService.GetProjects(User);
 
             return Json(new 
-            { 
-                Projects = test.Select(s=> new{
+            {
+                Projects = GetProjects.Select(s => new
+                {
                     ProjectId = s.Project.ProjectId,
                     Name = s.Project.Name,
                     Url = System.Configuration.ConfigurationManager.AppSettings["Domain"] + "Task/Index"
@@ -59,9 +66,48 @@ namespace TaskShelf_www.Parts.Project
         [AjaxOnly]
         public ActionResult CreateProject(core.Models.CreateProjectModel model)
         {
-            projectService.CreateProject(model, User);
+            projectService.SaveProject(model, User);
 
             return Json(JsonReturns.Redirect("/Project/Index"), JsonRequestBehavior.AllowGet);
         }
+        #endregion
+
+        #region Labels
+        public ActionResult LabelListView()
+        {
+
+            return View();
+        }
+        [HttpGet]
+        public ActionResult LabelList()
+        {
+            var projectId = Int32.Parse(Request.Cookies["ProjectId"].Value);
+            var GetLabels = labelService.GetLabel(projectId);
+            return Json(new
+            {
+                Labels = GetLabels.Select(s => new
+                {
+                    Name = s.Name,
+                }
+
+                ),
+                HasMore = true
+            }, JsonRequestBehavior.AllowGet);
+               
+        }
+
+        public ActionResult CreateLabelView()
+        {
+            return View();
+        }
+
+        public ActionResult CreateLabel(CreateLabelModel model)
+        {
+            var projectId = Int32.Parse(Request.Cookies["ProjectId"].Value);
+            labelService.SaveLabel(model, projectId);
+            return Json(JsonReturns.Redirect("/Task/Index"), JsonRequestBehavior.AllowGet);
+
+        }
+        #endregion
     }
 }

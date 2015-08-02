@@ -93,8 +93,12 @@ namespace TaskShelf_www.Parts.Task
         public ActionResult CreateTask(core.Models.CreateTaskModel model)
         {
             var projectId = Int32.Parse(Request.Cookies["ProjectId"].Value);
+<<<<<<< HEAD
 
             taskService.CreateTask(model, projectId);
+=======
+            taskService.SaveTask(model, projectId);
+>>>>>>> 646b0b029b8926321e1e369b39ae3b617ab56c67
 
             return Json(JsonReturns.Redirect("/Task/Index"), JsonRequestBehavior.AllowGet);
         }

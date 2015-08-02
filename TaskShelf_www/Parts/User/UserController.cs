@@ -21,8 +21,9 @@ namespace TaskShelf_www.Parts.User
         }
         [ChildActionOnly]
         public ActionResult LoginBox()
-        {
+        {  
             return View();
+            
         }
 
         [ChildActionOnly]
