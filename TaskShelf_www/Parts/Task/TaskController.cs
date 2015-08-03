@@ -94,7 +94,7 @@ namespace TaskShelf_www.Parts.Task
         {
             var projectId = Int32.Parse(Request.Cookies["ProjectId"].Value);
 
-            taskService.CreateTask(model, projectId);
+            taskService.SaveTask(model, projectId);
 
             return Json(JsonReturns.Redirect("/Task/Index"), JsonRequestBehavior.AllowGet);
         }

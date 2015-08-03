@@ -101,7 +101,7 @@ namespace TaskShelf_www.Parts.Project
             return View();
         }
 
-        public ActionResult CreateLabel(CreateLabelModel model)
+        public ActionResult CreateLabel(core.Models.CreateLabelModel model)
         {
             var projectId = Int32.Parse(Request.Cookies["ProjectId"].Value);
             labelService.SaveLabel(model, projectId);
