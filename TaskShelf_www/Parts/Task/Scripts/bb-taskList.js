@@ -10,6 +10,7 @@ taskList.taskListModel = Backbone.Model.extend({
 
 taskList.taskModel = Backbone.Model.extend({
     defaults: {
+        TaskId: null,
         Name: ''
     }
 });

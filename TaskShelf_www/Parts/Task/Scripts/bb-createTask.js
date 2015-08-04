@@ -70,19 +70,17 @@ createTask.app = Backbone.View.extend({
 
     },
     inputFileChange: function (e) {
-        this.attachments.add([{ FileName: $(e.target).val().split('\\').pop() }])
-        //attachment.set('FileName', $(e.target).val().split('\\').pop());
-        console.log(this.attachments)
+        var self = this;
+        self.attachments.reset()
+        this.$el.find('input[type="file"]').each(function () {
+            var text = $(this).val().split('\\').pop()
+            if(text.length>0){
+                self.attachments.add([{ FileName: text }])
+            }
+            self.model.set('Attachments', self.attachments);
+            console.log(self.model)
+        })
         
-        this.model.set('Attachments', this.attachments);
-
-        console.log(this.model)
-        //var name = $(e.target).attr('name');
-        //var array = this.model.get(name);
-        //array.models.push($(e.target).val().split('\\').pop());
-        //console.log(array.models)
-        //this.model.set(name, array.models);
-        //console.log(this.model)
 
     },
     createTaskButtonClick: function (e) {

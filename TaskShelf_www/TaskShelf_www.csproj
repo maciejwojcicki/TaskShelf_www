@@ -235,6 +235,7 @@
     <Content Include="Parts\Task\Views\CreateTaskView.cshtml" />
     <Content Include="Parts\Project\Views\LabelListView.cshtml" />
     <Content Include="Parts\Project\Views\CreateLabelView.cshtml" />
+    <Content Include="Parts\Task\Views\TaskReview.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

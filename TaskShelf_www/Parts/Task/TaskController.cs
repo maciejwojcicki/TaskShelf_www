@@ -30,6 +30,11 @@ namespace TaskShelf_www.Parts.Task
 
             return View();
         }
+        public ActionResult TaskReview(int TaskId)
+        {
+            return View();
+        }
+
 
         public ActionResult CreateTaskView()
         {
@@ -80,6 +85,7 @@ namespace TaskShelf_www.Parts.Task
             {
                 Tasks = GetTasks.Select(s => new
                 {
+                    TaskId = s.TaskId,
                     Name = s.Name
                 }
 
