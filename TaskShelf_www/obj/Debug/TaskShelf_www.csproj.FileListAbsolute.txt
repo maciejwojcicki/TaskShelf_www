@@ -134,10 +134,7 @@ D:\Projekty\TaskShelf_www\TaskShelf_www\bin\TaskShelf_www.dll.config
 D:\Projekty\TaskShelf_www\TaskShelf_www\bin\TaskShelf_www.dll
 D:\Projekty\TaskShelf_www\TaskShelf_www\bin\TaskShelf_www.pdb
 D:\Projekty\TaskShelf_www\TaskShelf_www\bin\Antlr3.Runtime.dll
-D:\Projekty\TaskShelf_www\TaskShelf_www\bin\core.dll
-D:\Projekty\TaskShelf_www\TaskShelf_www\bin\database.dll
 D:\Projekty\TaskShelf_www\TaskShelf_www\bin\EntityFramework.SqlServer.dll
-D:\Projekty\TaskShelf_www\TaskShelf_www\bin\implementations.dll
 D:\Projekty\TaskShelf_www\TaskShelf_www\bin\log4net.dll
 D:\Projekty\TaskShelf_www\TaskShelf_www\bin\Microsoft.AspNet.Identity.Core.dll
 D:\Projekty\TaskShelf_www\TaskShelf_www\bin\Microsoft.AspNet.Identity.EntityFramework.dll
@@ -258,3 +255,6 @@ E:\Projects\TaskShelf_www\TaskShelf_www\bin\Microsoft.Owin.Security.Twitter.xml
 E:\Projects\TaskShelf_www\TaskShelf_www\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 E:\Projects\TaskShelf_www\TaskShelf_www\obj\Debug\TaskShelf_www.dll
 E:\Projects\TaskShelf_www\TaskShelf_www\obj\Debug\TaskShelf_www.pdb
+D:\Projekty\TaskShelf_www\TaskShelf_www\bin\core.dll
+D:\Projekty\TaskShelf_www\TaskShelf_www\bin\database.dll
+D:\Projekty\TaskShelf_www\TaskShelf_www\bin\implementations.dll

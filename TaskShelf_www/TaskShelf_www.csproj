@@ -40,15 +40,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="core">
-      <HintPath>..\packages\TaskShelf\core.dll</HintPath>
-    </Reference>
-    <Reference Include="database">
-      <HintPath>..\packages\TaskShelf\database.dll</HintPath>
-    </Reference>
-    <Reference Include="implementations">
-      <HintPath>..\packages\TaskShelf\implementations.dll</HintPath>
-    </Reference>
     <Reference Include="log4net">
       <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
     </Reference>
@@ -285,6 +276,20 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\core\core.csproj">
+      <Project>{1f4b2175-700a-4c7b-ae5d-ad1fe4dcf63e}</Project>
+      <Name>core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\database\database.csproj">
+      <Project>{7a7d2a1a-c263-46c6-9fa6-144ad1d6010c}</Project>
+      <Name>database</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\implementations\implementations.csproj">
+      <Project>{0a048889-22c0-416b-a797-a37a20e303ad}</Project>
+      <Name>implementations</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
