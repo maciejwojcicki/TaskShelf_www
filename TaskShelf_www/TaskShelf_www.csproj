@@ -203,6 +203,7 @@
     <Content Include="Parts\Project\Scripts\bb-projectList.js" />
     <Content Include="Parts\Task\Scripts\bb-createTask.js" />
     <Content Include="Parts\Task\Scripts\bb-taskList.js" />
+    <Content Include="Parts\Task\Styles\create-task.css" />
     <Content Include="Parts\User\Scripts\bb-userLoginbox.js" />
     <Content Include="Parts\User\Scripts\bb-userRegisterbox.js" />
     <Content Include="Scripts\ajaxform.js" />
@@ -265,7 +266,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Parts\Project\Styles\" />
-    <Folder Include="Parts\Task\Styles\" />
     <Folder Include="Parts\User\Styles\" />
   </ItemGroup>
   <ItemGroup>
