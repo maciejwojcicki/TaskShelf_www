@@ -183,6 +183,7 @@
     <Compile Include="Parts\Project\ProjectController.cs" />
     <Compile Include="Parts\Task\Models\AttachmentModel.cs" />
     <Compile Include="Parts\Task\Models\CreateTaskModel.cs" />
+    <Compile Include="Parts\Task\Models\TaskModel.cs" />
     <Compile Include="Parts\Task\TaskController.cs" />
     <Compile Include="Parts\User\Models\LoginModel.cs" />
     <Compile Include="Parts\User\Models\RegisterModel.cs" />
@@ -202,6 +203,7 @@
     <Content Include="Parts\Project\Scripts\bb-labelList.js" />
     <Content Include="Parts\Project\Scripts\bb-projectList.js" />
     <Content Include="Parts\Task\Scripts\bb-createTask.js" />
+    <Content Include="Parts\Task\Scripts\bb-taskCommentList.js" />
     <Content Include="Parts\Task\Scripts\bb-taskList.js" />
     <Content Include="Parts\Task\Styles\create-task.css" />
     <Content Include="Parts\User\Scripts\bb-userLoginbox.js" />
@@ -228,6 +230,8 @@
     <Content Include="Parts\Project\Views\LabelListView.cshtml" />
     <Content Include="Parts\Project\Views\CreateLabelView.cshtml" />
     <Content Include="Parts\Task\Views\TaskReview.cshtml" />
+    <Content Include="Parts\Task\Views\CommentsList.cshtml" />
+    <Content Include="Parts\Task\Views\TaskCommentView.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -278,10 +282,6 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\core\core.csproj">
-      <Project>{1f4b2175-700a-4c7b-ae5d-ad1fe4dcf63e}</Project>
-      <Name>core</Name>
-    </ProjectReference>
     <ProjectReference Include="..\database\database.csproj">
       <Project>{7a7d2a1a-c263-46c6-9fa6-144ad1d6010c}</Project>
       <Name>database</Name>

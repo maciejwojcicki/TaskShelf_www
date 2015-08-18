@@ -1,4 +1,21 @@
-﻿@{
+﻿@model implementations.Models.TaskModel
+
+@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-task review 
+task review  TEST Z WIDOKU
+<form>
+    <div class="form-group">
+        <label for="Status">Status: @Model.Status</label>
+        <label for="Type">Rodzaj: @Model.Type</label>
+        <label for="Name">Tytuł: @Model.Name</label>
+        <br />
+        <label for="Opis">Opis</label>
+        <textarea class="form-control" rows="3">@Model.Description</textarea>
+        <label for="ExpectedWorkTime">Przewidywany czas: @Model.ExpectedWorkTime</label>
+        <label for="ExpectedWorkTime">Data utworzenia:@Model.CreateDate</label>
+    </div>
+
+</form>
+@Html.Action("TaskCommentView","Task") 
+     

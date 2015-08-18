@@ -8,7 +8,6 @@ using System.Web.Mvc;
 using System.Web.Security;
 using TaskShelf_www.App_Start;
 using TaskShelf_www.Parts.Project.Models;
-using core.Models;
 
 namespace TaskShelf_www.Parts.Project
 {
@@ -64,7 +63,7 @@ namespace TaskShelf_www.Parts.Project
 
         [HttpPost]
         [AjaxOnly]
-        public ActionResult CreateProject(core.Models.CreateProjectModel model)
+        public ActionResult CreateProject(implementations.Models.CreateProjectModel model)
         {
             projectService.SaveProject(model, User);
 
@@ -101,7 +100,7 @@ namespace TaskShelf_www.Parts.Project
             return View();
         }
 
-        public ActionResult CreateLabel(core.Models.CreateLabelModel model)
+        public ActionResult CreateLabel(implementations.Models.CreateLabelModel model)
         {
             var projectId = Int32.Parse(Request.Cookies["ProjectId"].Value);
             labelService.SaveLabel(model, projectId);

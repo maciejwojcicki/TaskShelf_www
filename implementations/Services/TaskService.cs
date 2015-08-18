@@ -1,7 +1,7 @@
-﻿using core.Models;
-using database;
+﻿using database;
 using database.Entities;
 using implementations.Interfaces;
+using implementations.Models;
 using implementations.Utils;
 using System;
 using System.Collections.Generic;
@@ -35,6 +35,22 @@ namespace implementations.Services
       
             var model = context.Set<Task>().Where(p=>p.Project.ProjectId.Equals(CurrentProject.ProjectId)).ToList();
             
+            return model;
+        }
+        public TaskModel CurrentTask(int taskId)
+        {
+            TaskModel model = new TaskModel();
+            var CurrentTask = context.Set<Task>().Single(p => p.TaskId == taskId);
+
+            model.Name = CurrentTask.Name;
+            model.Status = CurrentTask.Status;
+            model.TaskId = CurrentTask.TaskId;
+            model.CreateDate = CurrentTask.CreateDate;
+            model.Description = CurrentTask.Description;
+            model.ExpectedWorkTime = CurrentTask.ExpectedWorkTime;
+            model.Type = CurrentTask.Type;
+            model.Attachments = CurrentTask.TaskAttachments;
+
             return model;
         }
 

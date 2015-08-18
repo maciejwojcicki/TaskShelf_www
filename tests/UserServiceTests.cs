@@ -1,15 +1,15 @@
-﻿using core.Models;
-using database;
-using implementations.Exceptions;
-using implementations.Interfaces;
-using implementations.Services;
-using NUnit.Framework;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using database;
+using implementations.Exceptions;
+using implementations.Interfaces;
+using implementations.Models;
+using implementations.Services;
+using NUnit.Framework;
 
 namespace tests
 {

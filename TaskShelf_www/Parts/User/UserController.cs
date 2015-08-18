@@ -9,6 +9,7 @@ using System.Web.Security;
 using TaskShelf_www.App_Start;
 using TaskShelf_www.Parts.User.Models;
 
+
 namespace TaskShelf_www.Parts.User
 {
     public class UserController : Controller
@@ -35,7 +36,7 @@ namespace TaskShelf_www.Parts.User
 
         [AjaxOnly]
         [HttpPost]
-        public ActionResult RegisterUser(core.Models.RegisterModel model)
+        public ActionResult RegisterUser(implementations.Models.RegisterModel model)
         {
             try 
             {
@@ -54,7 +55,7 @@ namespace TaskShelf_www.Parts.User
 
         [AjaxOnly]
         [HttpPost]
-        public ActionResult Login(core.Models.LoginModel model)
+        public ActionResult Login(implementations.Models.LoginModel model)
         {
             int userId = 0;
             try 

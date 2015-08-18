@@ -5,8 +5,6 @@ VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskShelf_www", "TaskShelf_www\TaskShelf_www.csproj", "{7458A940-7413-4A6E-889B-9A64B94DC013}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "core", "core\core.csproj", "{1F4B2175-700A-4C7B-AE5D-AD1FE4DCF63E}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "database", "database\database.csproj", "{7A7D2A1A-C263-46C6-9FA6-144AD1D6010C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "implementations", "implementations\implementations.csproj", "{0A048889-22C0-416B-A797-A37A20E303AD}"
@@ -23,10 +21,6 @@ Global
 		{7458A940-7413-4A6E-889B-9A64B94DC013}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7458A940-7413-4A6E-889B-9A64B94DC013}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7458A940-7413-4A6E-889B-9A64B94DC013}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1F4B2175-700A-4C7B-AE5D-AD1FE4DCF63E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1F4B2175-700A-4C7B-AE5D-AD1FE4DCF63E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1F4B2175-700A-4C7B-AE5D-AD1FE4DCF63E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1F4B2175-700A-4C7B-AE5D-AD1FE4DCF63E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7A7D2A1A-C263-46C6-9FA6-144AD1D6010C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7A7D2A1A-C263-46C6-9FA6-144AD1D6010C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7A7D2A1A-C263-46C6-9FA6-144AD1D6010C}.Release|Any CPU.ActiveCfg = Release|Any CPU

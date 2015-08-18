@@ -1,12 +1,13 @@
-﻿using System;
+﻿using database.Entities;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using database.Entities;
 using System.ComponentModel.DataAnnotations;
-namespace core.Models
+using System.Linq;
+using System.Web;
+
+namespace TaskShelf_www.Parts.Task.Models
 {
-    public class CreateTaskModel
+    public class TaskModel
     {
         public int TaskId { get; set; }
         [Required]

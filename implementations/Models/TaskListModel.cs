@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace core.Models
+namespace implementations.Models
 {
-    public class TaskModel
+    public class TaskListModel
     {
         public List<database.Entities.Task> Tasks { get; set; }
     }

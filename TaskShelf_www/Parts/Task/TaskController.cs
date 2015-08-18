@@ -30,9 +30,13 @@ namespace TaskShelf_www.Parts.Task
 
             return View();
         }
-        public ActionResult TaskReview(int TaskId)
+        public ActionResult TaskCommentView()
         {
             return View();
+        }
+        public ActionResult TaskReview(int TaskId)
+        {
+            return View(taskService.CurrentTask(TaskId));
         }
 
 
@@ -82,21 +86,21 @@ namespace TaskShelf_www.Parts.Task
             var GetTasks = taskService.GetTasks(User, projectId);
 
             return Json(new
-            {
-                Tasks = GetTasks.Select(s => new
                 {
-                    TaskId = s.TaskId,
-                    Name = s.Name
-                }
+                    Tasks = GetTasks.Select(s => new
+                    {
+                        TaskId = s.TaskId,
+                        Name = s.Name
+                    }
 
-                ),
-                HasMore = true
-            }, JsonRequestBehavior.AllowGet);
+                    ),
+                    HasMore = true
+                }, JsonRequestBehavior.AllowGet);
         }
 
         [HttpPost]
         [AjaxOnly]
-        public ActionResult CreateTask(core.Models.CreateTaskModel model)
+        public ActionResult CreateTask(implementations.Models.CreateTaskModel model)
         {
             var projectId = Int32.Parse(Request.Cookies["ProjectId"].Value);
 
@@ -112,6 +116,21 @@ namespace TaskShelf_www.Parts.Task
             
 
             return Json(JsonReturns.Redirect("/Task/Index"), JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult CommentsList(int taskId)
+        {
+            taskId = 0;
+            var GetComment = taskService.GetComments(User, taskId);
+
+            return Json(new
+                {
+                    TaskComments = GetComment.Select(s => new
+                    {
+                        TaskCommentId = s.TaskCommentId,
+                        Text = s.Text
+                    }),
+                }, JsonRequestBehavior.AllowGet);
         }
     }
 }

@@ -56,10 +56,6 @@
     <Compile Include="UserServiceTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\core\core.csproj">
-      <Project>{1f4b2175-700a-4c7b-ae5d-ad1fe4dcf63e}</Project>
-      <Name>core</Name>
-    </ProjectReference>
     <ProjectReference Include="..\database\database.csproj">
       <Project>{7a7d2a1a-c263-46c6-9fa6-144ad1d6010c}</Project>
       <Name>database</Name>

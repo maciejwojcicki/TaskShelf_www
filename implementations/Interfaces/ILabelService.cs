@@ -1,5 +1,5 @@
-﻿using core.Models;
-using database.Entities;
+﻿using database.Entities;
+using implementations.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

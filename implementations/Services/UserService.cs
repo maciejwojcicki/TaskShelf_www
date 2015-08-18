@@ -1,9 +1,4 @@
-﻿using core.Models;
-using database;
-using database.Entities;
-using implementations.Interfaces;
-using implementations.Utils;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
@@ -12,6 +7,11 @@ using System.Data.Entity;
 using System.Threading.Tasks;
 using implementations.Exceptions;
 using System.Security.Principal;
+using implementations.Models;
+using database;
+using database.Entities;
+using implementations.Interfaces;
+using implementations.Utils;
 
 namespace implementations.Services
 {

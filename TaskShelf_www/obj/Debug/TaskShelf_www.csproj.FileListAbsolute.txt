@@ -160,7 +160,6 @@ D:\Projekty\TaskShelf_www\TaskShelf_www\bin\System.Web.WebPages.Deployment.dll
 D:\Projekty\TaskShelf_www\TaskShelf_www\bin\System.Web.WebPages.dll
 D:\Projekty\TaskShelf_www\TaskShelf_www\bin\System.Web.WebPages.Razor.dll
 D:\Projekty\TaskShelf_www\TaskShelf_www\bin\WebGrease.dll
-D:\Projekty\TaskShelf_www\TaskShelf_www\bin\core.pdb
 D:\Projekty\TaskShelf_www\TaskShelf_www\bin\database.pdb
 D:\Projekty\TaskShelf_www\TaskShelf_www\bin\implementations.pdb
 D:\Projekty\TaskShelf_www\TaskShelf_www\bin\log4net.xml
@@ -255,6 +254,5 @@ E:\Projects\TaskShelf_www\TaskShelf_www\bin\Microsoft.Owin.Security.Twitter.xml
 E:\Projects\TaskShelf_www\TaskShelf_www\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 E:\Projects\TaskShelf_www\TaskShelf_www\obj\Debug\TaskShelf_www.dll
 E:\Projects\TaskShelf_www\TaskShelf_www\obj\Debug\TaskShelf_www.pdb
-D:\Projekty\TaskShelf_www\TaskShelf_www\bin\core.dll
 D:\Projekty\TaskShelf_www\TaskShelf_www\bin\database.dll
 D:\Projekty\TaskShelf_www\TaskShelf_www\bin\implementations.dll
