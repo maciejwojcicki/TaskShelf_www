@@ -176,6 +176,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\AjaxAttribute.cs" />
     <Compile Include="Helpers\EnumHelper.cs" />
     <Compile Include="Parts\ErrorController.cs" />
     <Compile Include="Parts\Home\HomeController.cs" />
@@ -184,6 +185,7 @@
     <Compile Include="Parts\Task\Models\AttachmentModel.cs" />
     <Compile Include="Parts\Task\Models\CreateTaskModel.cs" />
     <Compile Include="Parts\Task\Models\TaskModel.cs" />
+    <Compile Include="Parts\Task\Models\TaskReviewModel.cs" />
     <Compile Include="Parts\Task\TaskController.cs" />
     <Compile Include="Parts\User\Models\LoginModel.cs" />
     <Compile Include="Parts\User\Models\RegisterModel.cs" />
@@ -205,6 +207,7 @@
     <Content Include="Parts\Task\Scripts\bb-createTask.js" />
     <Content Include="Parts\Task\Scripts\bb-taskCommentList.js" />
     <Content Include="Parts\Task\Scripts\bb-taskList.js" />
+    <Content Include="Parts\Task\Scripts\bb-taskReview.js" />
     <Content Include="Parts\Task\Styles\create-task.css" />
     <Content Include="Parts\User\Scripts\bb-userLoginbox.js" />
     <Content Include="Parts\User\Scripts\bb-userRegisterbox.js" />

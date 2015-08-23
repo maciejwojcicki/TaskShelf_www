@@ -12,9 +12,10 @@ namespace implementations.Interfaces
     {
         List<Task> GetTasks(IPrincipal CurrentPrincipal, int projectId);
         void SaveTask(CreateTaskModel model,int projectId);
-        List<TaskComment> GetComments(IPrincipal CurrentPrincipal, int taskId);
         TaskModel CurrentTask(int taskId);
+        List<TaskComment> GetComments(IPrincipal CurrentPrincipal, int taskId);
         void SaveComent(CreateCommentModel model, IPrincipal CurrentPrincipal, int taskId);
+        List<TaskAttachment> GetAttachments(int taskId);
         
     }
 }

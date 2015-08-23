@@ -48,6 +48,7 @@ namespace implementations.Services
             model.CreateDate = CurrentTask.CreateDate;
             model.Description = CurrentTask.Description;
             model.ExpectedWorkTime = CurrentTask.ExpectedWorkTime;
+            model.CompletedDate = CurrentTask.CompletedDate;
             model.Type = CurrentTask.Type;
             model.Attachments = CurrentTask.TaskAttachments;
 
@@ -124,6 +125,18 @@ namespace implementations.Services
         public void SaveComent(CreateCommentModel model, IPrincipal CurrentPrincipal, int taskId)
         {
 
+        }
+        #endregion
+
+        #region Attachments
+        public List<TaskAttachment> GetAttachments(int taskId)
+        {
+            Task CurrentTask = context.Set<Task>().Single(p => p.TaskId == taskId);
+
+            var model = from x in context.Set<TaskAttachment>()
+                        where x.Task.TaskId.Equals(taskId) 
+                        select x;
+            return model.ToList();
         }
         #endregion
     }
