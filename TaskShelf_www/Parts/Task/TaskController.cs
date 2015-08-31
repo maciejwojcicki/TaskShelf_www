@@ -30,13 +30,12 @@ namespace TaskShelf_www.Parts.Task
 
             return View();
         }
-        public ActionResult TaskCommentView()
-        {
-            return View();
-        }
         public ActionResult TaskReview(int TaskId)
         {
-            return View(taskService.CurrentTask(TaskId));
+            TaskReviewModel model = new TaskReviewModel();
+            model.TaskId = TaskId;
+            
+            return View(model);
         }
 
 
@@ -44,25 +43,13 @@ namespace TaskShelf_www.Parts.Task
         {
             CreateTaskModel model = new CreateTaskModel();
 
-            //var statuses = EnumHelper.GetValues<database.Entities.Task.TaskStatus>();
-
-         
             Dictionary<int, string> types = new Dictionary<int, string>();
 
             foreach (var item in EnumHelper.GetValues<database.Entities.Task.TaskType>())
             {
                 types.Add((int)item, EnumHelper.GetEnumDescription(item));
             }
-            //EnumHelper.ToDictionary(database.Entities.Task.TaskStatus.Completed);
-            //var json = new
-            //{
-            //    TaskStatuses = statuses.Select(s => new
-            //    {
-            //        Name = EnumHelper.GetEnumDescription(s),
-            //        Value = (int)s
-            //    })
-            //};
-            //Dictionary<string, string> values = JsonConvert.DeserializeObject<Dictionary<string, string>>(json);
+
             model.Types = types;
             return View(model);
         }
@@ -91,9 +78,7 @@ namespace TaskShelf_www.Parts.Task
                     {
                         TaskId = s.TaskId,
                         Name = s.Name
-                    }
-
-                    ),
+                    }),
                     HasMore = true
                 }, JsonRequestBehavior.AllowGet);
         }
@@ -118,18 +103,34 @@ namespace TaskShelf_www.Parts.Task
             return Json(JsonReturns.Redirect("/Task/Index"), JsonRequestBehavior.AllowGet);
         }
 
-        public ActionResult CommentsList(int taskId)
+        [Ajax]
+        public ActionResult TaskReviewModel(int taskId)
         {
-            taskId = 0;
-            var GetComment = taskService.GetComments(User, taskId);
-
+           
+            var Task = taskService.CurrentTask(taskId);
+            var Comments = taskService.GetComments(User, taskId);
+            var Attachments = taskService.GetAttachments(taskId);
+            
             return Json(new
                 {
-                    TaskComments = GetComment.Select(s => new
+                    TaskId = Task.TaskId,
+                    Name = Task.Name,
+                    Description = Task.Description,
+                    CreateDate = Task.CreateDate.ToString(),
+                    ExpectedWorkTime = Task.ExpectedWorkTime,
+                    CompletedDate = Task.CompletedDate,
+                    Status = Task.Status,
+                    Type = Task.Type,
+                    Attachments = Attachments.Select(s => new
                     {
-                        TaskCommentId = s.TaskCommentId,
-                        Text = s.Text
+                        AttachmentId = s.TaskAttachmentId,
+                        FileName = s.FileName
                     }),
+                    Comments = Comments.Select(s => new
+                    {
+                        CommentId = s.TaskCommentId,
+                        Text = s.Text
+                    })
                 }, JsonRequestBehavior.AllowGet);
         }
     }
