@@ -14,5 +14,6 @@ namespace implementations.Interfaces
         IPrincipal GetPrincipal(int userId);
         User GetCurrentUser(IPrincipal currentPrincipal);
         void Register(RegisterModel model);
+        User GetUserById(int userId);
     }
 }

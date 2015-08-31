@@ -31,14 +31,14 @@ namespace implementations.Services
         public int Login(LoginModel model)
         {
             ModelUtils.Validate(model);
-           
+
             var hash = UserUtils.PasswordHash(model.Password);
 
-            var user = context.Set<User>()    
+            var user = context.Set<User>()
                 .Where(w => w.Login == model.Login && w.Password == hash)
                 //.Include(i => i.Permissions)               
-                .SingleOrDefault();    
-                
+                .SingleOrDefault();
+
             if (user == null)
             {
                 throw new InvalidLoginPasswordException();
@@ -73,8 +73,8 @@ namespace implementations.Services
                 throw new NotFoundException();
             }
 
-            //string[] roles = user.Permissions.OfType<Permission>().Select(p => p.Name.ToString()).ToArray();
-            string[] roles = { "test" };
+            string[] roles = context.Set<Permission>().Select(p => p.Name).ToArray();
+            //string[] roles = { "test" };
             return new GenericPrincipal(
                 new GenericIdentity(user.UserId.ToString()),
                 roles);
@@ -90,17 +90,21 @@ namespace implementations.Services
             }
             return user;
         }
-          
+        public User GetUserById(int userId)
+        {
+            var user = context.Set<User>().Single(p => p.UserId == userId);
+            return user;
+        }
 
-        public void Register (RegisterModel model)
+        public void Register(RegisterModel model)
         {
             ModelUtils.Validate(model);
 
-            if( context.Set<User>().Where(w => w.Login.ToLower() == model.Login.ToLower()).Count()>0)
+            if (context.Set<User>().Where(w => w.Login.ToLower() == model.Login.ToLower()).Count() > 0)
             {
                 throw new LoginInUseException();
             }
-            
+
 
             var user = new User();
             user.Login = model.Login;
@@ -117,7 +121,7 @@ namespace implementations.Services
             //    .Single(p=>p.Name == "CanLogin")
 
             //};
-            
+
         }
     }
 }

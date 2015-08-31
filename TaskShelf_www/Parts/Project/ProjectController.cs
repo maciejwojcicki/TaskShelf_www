@@ -1,4 +1,5 @@
-﻿using implementations.Interfaces;
+﻿using implementations.Authenticate;
+using implementations.Interfaces;
 using implementations.Services;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,7 @@ using TaskShelf_www.Parts.Project.Models;
 
 namespace TaskShelf_www.Parts.Project
 {
+    [AppAuthorize(Roles = "CanView")]
     public class ProjectController : Controller
     {
         IProjectService projectService = null;
