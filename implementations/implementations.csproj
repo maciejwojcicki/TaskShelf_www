@@ -99,6 +99,7 @@
     <Compile Include="Services\TaskService.cs" />
     <Compile Include="Services\UserService.cs" />
     <Compile Include="Utils\ModelUtils.cs" />
+    <Compile Include="Utils\UploadFiles.cs" />
     <Compile Include="Utils\UserUtils.cs" />
   </ItemGroup>
   <ItemGroup>

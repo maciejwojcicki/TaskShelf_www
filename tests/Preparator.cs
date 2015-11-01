@@ -85,6 +85,14 @@ namespace tests
             comment.User = user;
             model.Set<TaskComment>().Add(comment);
             model.SaveChanges();
+
+            var taskAttachment = new TaskAttachment();
+            taskAttachment.FileName = Guid.NewGuid().ToString("N");
+            taskAttachment.OrginalName = "nazwa";
+            taskAttachment.Task = task;
+            model.Set<TaskAttachment>().Add(taskAttachment);
+            model.SaveChanges();
+            
           
         }
 

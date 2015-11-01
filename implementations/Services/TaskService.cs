@@ -5,9 +5,11 @@ using implementations.Models;
 using implementations.Utils;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Security.Principal;
 using System.Text;
+using System.Web;
 
 
 namespace implementations.Services
@@ -105,6 +107,7 @@ namespace implementations.Services
                         context.SaveChanges();
                     }
                 }
+                
             }
             
         }
@@ -137,6 +140,31 @@ namespace implementations.Services
                         where x.Task.TaskId.Equals(taskId) 
                         select x;
             return model.ToList();
+        }
+
+        /// <summary>
+        /// Uploaded file and Save to database.
+        /// </summary>
+        public void UploadFilesFromInput(IEnumerable<HttpPostedFileBase> files, int taskId)
+        {
+            var task = context.Set<Task>().Single(p => p.TaskId == taskId);
+            foreach (var file in files)
+            {
+                var taskAttachment = new TaskAttachment();
+                taskAttachment.OrginalName = file.FileName;
+                taskAttachment.Task = task;
+                taskAttachment.FileName = Guid.NewGuid().ToString("N");
+                context.Set<TaskAttachment>().Add(taskAttachment);
+                context.SaveChanges();
+               
+                if (file.ContentLength > 0)
+                {
+                    var fileName = Path.GetFileName(taskAttachment.FileName);
+
+                    var path = Path.Combine(System.Web.HttpContext.Current.Server.MapPath("~/Contetnt/Files"), fileName);
+                    file.SaveAs(path);
+                }
+            }
         }
         #endregion
     }

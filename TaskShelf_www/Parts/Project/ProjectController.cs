@@ -12,7 +12,7 @@ using TaskShelf_www.Parts.Project.Models;
 
 namespace TaskShelf_www.Parts.Project
 {
-    [AppAuthorize(Roles = "CanView")]
+    //[AppAuthorize(Roles = "CanView")]
     public class ProjectController : Controller
     {
         IProjectService projectService = null;

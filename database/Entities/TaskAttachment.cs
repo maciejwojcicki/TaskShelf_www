@@ -9,7 +9,10 @@ namespace database.Entities
     public class TaskAttachment
     {
         public int TaskAttachmentId { get; set; }
+
+        public string OrginalName { get; set; }
         public string FileName { get; set; }
+
 
         public virtual Task Task { get; set; }
     }

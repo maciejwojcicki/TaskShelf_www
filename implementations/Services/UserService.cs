@@ -44,6 +44,7 @@ namespace implementations.Services
                 throw new InvalidLoginPasswordException();
             }
 
+
             //if (user.ActivationToken != null)
             //{
             //    throw new AccountNotActivatedException();

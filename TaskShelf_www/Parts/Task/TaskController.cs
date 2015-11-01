@@ -124,6 +124,7 @@ namespace TaskShelf_www.Parts.Task
                     Attachments = Attachments.Select(s => new
                     {
                         AttachmentId = s.TaskAttachmentId,
+                        OriginalName = s.OrginalName,
                         FileName = s.FileName
                     }),
                     Comments = Comments.Select(s => new

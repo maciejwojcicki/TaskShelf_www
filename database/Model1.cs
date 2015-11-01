@@ -14,8 +14,8 @@ namespace database
             : base("name=Model1")
         {
             //SqlConnection.ClearAllPools();
-            Database.SetInitializer<Model1>(null);
-            //Database.SetInitializer<Model1>(new DropCreateDatabaseAlways<Model1>());
+            //Database.SetInitializer<Model1>(null);
+            Database.SetInitializer<Model1>(new DropCreateDatabaseAlways<Model1>());
         }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -108,6 +108,11 @@ namespace database
                 .HasKey(h=>h.TaskId)
                 .HasMany(h => h.Labels)
                 .WithMany(w => w.Tasks);
+
+            modelBuilder.Entity<Task>()
+                .HasMany(h => h.TaskAttachments)
+                .WithRequired(w => w.Task)
+                .WillCascadeOnDelete(false);
                 
 
         }
