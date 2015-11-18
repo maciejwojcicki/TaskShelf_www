@@ -14,8 +14,8 @@ namespace database
             : base("name=Model1")
         {
             //SqlConnection.ClearAllPools();
-            //Database.SetInitializer<Model1>(null);
-            Database.SetInitializer<Model1>(new DropCreateDatabaseAlways<Model1>());
+            Database.SetInitializer<Model1>(null);
+            //Database.SetInitializer<Model1>(new DropCreateDatabaseAlways<Model1>());
         }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

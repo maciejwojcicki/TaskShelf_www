@@ -15,10 +15,12 @@ namespace TaskShelf_www.Parts.Task
     public class TaskController : Controller
     {
         ITaskService taskService = null;
-        
+        private readonly ILabelService labelService;
+
         public TaskController()
         {
             taskService = new TaskService();
+            labelService = new LabelService();
         }
         // GET: Task
         public ActionResult Index()
@@ -34,7 +36,7 @@ namespace TaskShelf_www.Parts.Task
         {
             TaskReviewModel model = new TaskReviewModel();
             model.TaskId = TaskId;
-            
+
             return View(model);
         }
 
@@ -53,7 +55,7 @@ namespace TaskShelf_www.Parts.Task
             model.Types = types;
             return View(model);
         }
-        
+
         public ActionResult CreateTaskModel()
         {
             var statuses = EnumHelper.GetValues<database.Entities.Task.TaskStatus>();
@@ -98,7 +100,7 @@ namespace TaskShelf_www.Parts.Task
         public ActionResult UploadAttachment(AttachmentModel model)
         {
             var projectId = Int32.Parse(Request.Cookies["ProjectId"].Value);
-            
+
 
             return Json(JsonReturns.Redirect("/Task/Index"), JsonRequestBehavior.AllowGet);
         }
@@ -106,31 +108,39 @@ namespace TaskShelf_www.Parts.Task
         [Ajax]
         public ActionResult TaskReviewModel(int taskId)
         {
-           
-            var Task = taskService.CurrentTask(taskId);
-            var Comments = taskService.GetComments(User, taskId);
-            var Attachments = taskService.GetAttachments(taskId);
-            
+            var projectId = Int32.Parse(Request.Cookies["ProjectId"].Value);
+
+            var task = taskService.CurrentTask(taskId);
+            var comments = taskService.GetComments(User, taskId);
+            var attachments = taskService.GetAttachments(taskId);
+            var labels = labelService.GetLabel(projectId);
+
+
             return Json(new
                 {
-                    TaskId = Task.TaskId,
-                    Name = Task.Name,
-                    Description = Task.Description,
-                    CreateDate = Task.CreateDate.ToString(),
-                    ExpectedWorkTime = Task.ExpectedWorkTime,
-                    CompletedDate = Task.CompletedDate,
-                    Status = Task.Status,
-                    Type = Task.Type,
-                    Attachments = Attachments.Select(s => new
+                    TaskId = task.TaskId,
+                    Name = task.Name,
+                    Description = task.Description,
+                    CreateDate = task.CreateDate.ToString(),
+                    ExpectedWorkTime = task.ExpectedWorkTime,
+                    CompletedDate = task.CompletedDate,
+                    Status = task.Status.GetEnumDescription(),
+                    Type = task.Type.GetEnumDescription(),
+                    Attachments = attachments.Select(s => new
                     {
                         AttachmentId = s.TaskAttachmentId,
                         OriginalName = s.OrginalName,
                         FileName = s.FileName
                     }),
-                    Comments = Comments.Select(s => new
+                    Comments = comments.Select(s => new
                     {
                         CommentId = s.TaskCommentId,
                         Text = s.Text
+                    }),
+                    Labels = labels.Select(s => new
+                    {
+                        LabelId = s.LabelId,
+                        LabelName = s.Name
                     })
                 }, JsonRequestBehavior.AllowGet);
         }

@@ -14,7 +14,7 @@ namespace TaskShelf_www.Helpers
             return Enum.GetValues(typeof(T)).Cast<T>();
         }
 
-        public static string GetEnumDescription<T>(T enumeratedType)
+        public static string GetEnumDescription<T>(this T enumeratedType)
         {
             var description = enumeratedType.ToString();
 
@@ -36,15 +36,6 @@ namespace TaskShelf_www.Helpers
             }
 
             return description;
-        }
-        
-
-        //public static Dictionary<int, string> ToDictionary(this Enum @enum)
-        //{
-        //    var type = @enum.GetType();
-            
-        //    var z = Enum.GetValues(type).Cast<int>().ToDictionary(e => e, e => Enum.GetName(type, e));
-        //    return z;
-        //}
+        }      
     }
 }

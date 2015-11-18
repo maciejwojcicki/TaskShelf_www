@@ -10,6 +10,9 @@
     <div class="attachment-container">
 
     </div>
+    <div class="label-container">
+
+    </div>
 </div>
 
 
@@ -43,6 +46,13 @@
         <strong>Plik:  </strong><%=FileName%>
     </div>
     
+</script>
+
+<script type="text/template" id="labelView-template">
+    <div>
+        <strong>Labels:  </strong><%=LabelName%>
+    </div>
+
 </script>
 
 @Html.AddScript("/Parts/Task/Scripts/bb-taskReview.js")
