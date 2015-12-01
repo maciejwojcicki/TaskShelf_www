@@ -99,6 +99,29 @@ taskReview.labelView = Backbone.View.extend({
     }
 });
 
+taskReview.labelDropView = Backbone.View.extend({
+    initialize: function () {
+        this.template = _.template($('#labelDropView-template').html());
+    },
+    render: function () {
+        var self = this;
+        this.$el.html(this.template(this.model.toJSON()));
+
+        return this;
+    }
+});
+taskReview.commentView = Backbone.View.extend({
+    initialize: function () {
+        this.template = _.template($('#commentView-template').html());
+    },
+    render: function () {
+        var self = this;
+        this.$el.html(this.template(this.model.toJSON()));
+
+        return this;
+    }
+});
+
 taskReview.app = Backbone.View.extend({
     el: $('#taskReview'),
     events: {
@@ -132,7 +155,20 @@ taskReview.app = Backbone.View.extend({
                     var labelModel = new taskReview.labelModel(label)
                     var labelView = new taskReview.labelView({ model: labelModel });
                     self.$el.find('div.label-container').append(labelView.render().el)
-                })
+                });
+
+                _.each(self.model.get('Comments'), function (comment) {
+                    var commentModel = new taskReview.commentModel(comment)
+                    var commentView = new taskReview.commentView({ model: commentModel });
+                    self.$el.find('div.comment-template').append(commentView.render().el)
+
+                });
+
+                _.each(self.model.get('Labels'), function (label) {
+                    var labelModel = new taskReview.labelModel(label)
+                    var labelView = new taskReview.labelDropView({ model: labelModel });
+                    self.$el.find('select.label', self.el).append(labelView.render().el)
+                });
             },
             error: function (response) {
                 var event = jQuery.parseJSON(response.responseText);

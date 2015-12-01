@@ -13,6 +13,11 @@
     <div class="label-container">
 
     </div>
+    <div class="comment-template">
+
+    </div>  
+    <select class="label">
+    </select>
 </div>
 
 
@@ -45,14 +50,22 @@
     <div>
         <strong>Plik:  </strong><%=FileName%>
     </div>
-    
 </script>
 
 <script type="text/template" id="labelView-template">
     <div>
         <strong>Labels:  </strong><%=LabelName%>
     </div>
+</script>
 
+<script type="text/template" id="labelDropView-template">
+    <option value="<%=LabelName%>"><%=LabelName%></option>
+</script>
+
+<script type="text/template" id="commentView-template">
+    <div>
+        <strong>Komentarze:  </strong><%=Text%>
+    </div>
 </script>
 
 @Html.AddScript("/Parts/Task/Scripts/bb-taskReview.js")
