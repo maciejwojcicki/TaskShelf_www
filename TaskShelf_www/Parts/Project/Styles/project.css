@@ -1,0 +1,33 @@
+﻿button.create-project{
+    float:right;
+}
+
+
+div.project{
+    height:150px;
+    background-color:#2daae1;
+    margin-bottom:10px;
+}
+div.project a{
+    display:block;
+    width:100%;
+    height:150px;
+    cursor:pointer;
+    text-align:center;
+    line-height:150px;
+    color:#fff;
+    font-size:22px;
+}
+div.project a:hover{
+    text-decoration:none;
+}
+@media screen and (max-width: 991px){
+    div.project{
+    height:100px;
+    background-color:#2daae1;
+}
+    div.project a{
+        font-size:16px;
+        line-height:100px;
+    }
+}

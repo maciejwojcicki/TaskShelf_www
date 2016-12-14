@@ -1,17 +1,124 @@
 ﻿body {
-    padding-top: 50px;
+    padding-top: 20px;
     padding-bottom: 20px;
+    background:#1f293e;
+    color:#fff;
 }
 
-/* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+.input-lg{
+    border-radius:0;
+    border:none;
+}
+input{
+    border:none!important;
+    box-shadow: none!important;
+    -webkit-box-shadow: none!important;
+    transition:none!important;
+    -webkit-trasition:none!important;  
+    border-radius:0px!important;
+    margin-bottom:10px;
+}
+input.form-control:focus{
+    border:none;
+    outline: 0;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
+textarea{
+    border:none!important;
+    box-shadow: none!important;
+    -webkit-box-shadow: none!important;
+    transition:none!important;
+    -webkit-trasition:none!important; 
+    border-radius:0px!important;
+    margin-bottom:10px;
+}
+textarea.form-control:focus{
+    border:none!important;
+    outline: 0;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
+.opacity-input{
+    opacity:0.5;
+}
+.green-input::-webkit-input-placeholder, .blue-input::-webkit-input-placeholder , .red-input::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    #fff;
+}
+.green-input:-moz-placeholder, .blue-input::-moz-placeholder, .red-input::-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #fff;
+   opacity:  1;
+}
+.green-input::-moz-placeholder, .blue-input::-moz-placeholder, .red-input::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #fff;
+   opacity:  1;
+}
+.green-input:-ms-input-placeholder, .blue-input:-ms-input-placeholder, .red-input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    #fff;
+}
+.green-input{
+    background:#00b09e;
+    color:#fff;
+}
+.blue-input{
+    background:#2daae1;
+    color:#fff;
+}
+.red-input{
+    background-color:#f15f69;
+    color:#fff;
+}
+.fileContainer {
+	position: relative;
+	overflow: hidden;
+    height:45px;
+    background:#f15f69;
+    border-radius:0px;
+    cursor:pointer;
+    line-height:45px;
+    font-weight:300;
+    font-size:16px;
+    width:100%;
+    text-align:center
+}
+.fileContainer span{
+    line-height:45px;
+    height:45px;
+    font-size:16px;
+    top:0!important;
+}
+.fileContainer input.file {
+    display:none;
 }
 
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
+.btn-lg{
+    border:none;
+    border-radius:0;
+    padding-left:40px;
+    padding-right:40px;
+}
+.green-button{
+    background:#00b09e;
+    color:#fff;
+}
+.blue-button{
+    background:#2daae1;
+    color:#fff;
+}
+.red-button{
+    background:#f15f69;
+    color:#fff;
+}
+
+
+
+/*MENU*/
+.nav>li>a{
+    color:#fff;
+    border-bottom:2px solid #fff;
+}
+.nav>li>a:hover, .nav>li>a:active, .nav>li>a:focus{
+    background-color:inherit!important;
+    border-bottom:2px solid #2daae1!important;
+    color:#2daae1;
 }

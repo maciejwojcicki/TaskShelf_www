@@ -2,8 +2,29 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <div class="container">
-    @Html.ActionLink("Dodaj zgłoszenie", "CreateTaskView")
-    @Html.Action("TaskListView", "Task")
-    @Html.Action("LabelListView", "Project")
-    @Html.Action("CreateLabelView", "Project")
+    <div class="row">
+        <div class="col-md-3">
+            <div>
+                <div class="btn-lg green-button create-task-button">
+                    @Html.ActionLink("UTWÓRZ ZGŁOSZENIE", "CreateTaskView")
+                </div>
+            </div>
+            <div>
+                <div class="btn-lg green-button labels-button">
+                    Etykiety
+
+                </div>
+                @Html.Action("LabelListView", "Project")
+            </div> 
+            <div>
+                @Html.Action("CreateLabelView", "Project")
+            </div>
+        </div>
+        <div class="col-md-9">
+            @Html.Action("TaskListView", "Task")
+        </div>
+    </div>
 </div>
+
+
+@Html.AddCss("/Parts/Task/Styles/task.css")

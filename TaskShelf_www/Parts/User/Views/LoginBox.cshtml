@@ -1,17 +1,21 @@
-﻿<div id="userLoginbox">
+﻿@{
+    Layout = null;
+}
+<div id="userLoginbox">
+    <h3>LOGOWANIE</h3>
     <div class="row">
-        <div class="col-sm-12 login-input">
-            <input class="input-m" type="text" name="Login" placeholder="Login" />
+        <div class="col-sm-12 login-row login-input">
+            <input class="form-control input-lg green-input" type="text" name="Login" placeholder="LOGIN" />
         </div>
     </div>
     <div class="row">
-        <div class="col-sm-12 password-input">
-            <input class="input-m" type="password" name="Password" placeholder="Hasło" />
+        <div class="col-sm-12 login-row password-input">
+            <input class="form-control input-lg green-input" type="password" name="Password" placeholder="HASŁO MIN 5 ZNAKÓW" />
         </div>
     </div>
     <div class="row">
         <div class="col-sm-12">
-            <button class="btn-xl">Zaloguj</button>
+            <button class="btn-lg green-button">ZALOGUJ</button>
         </div>
     </div>
 </div>

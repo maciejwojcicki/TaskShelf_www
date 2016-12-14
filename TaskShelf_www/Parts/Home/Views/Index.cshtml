@@ -1,7 +1,23 @@
 ﻿@{
-    Layout = null;
+    ViewBag.body_class = "no-menu";
 }
+<div class="container">
+    <div class="row">
+        <div class="login-header col-md-5 col-md-offset-1">
+            <span>Let's make it</span>
+        </div>
+        <div class="col-md-5">
+            <img class="img-responsive" src="~/Content/Images/logologowanie.png" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-5 col-md-offset-1">
+            @Html.Action("LoginBox", "User")
+        </div>
+        <div class="col-md-5">
+            @Html.Action("RegisterBox", "User")
+        </div>
+    </div>
+</div>
 
-@Html.Action("LoginBox", "User")
-@Html.Action("RegisterBox", "User")
-
+@Html.AddCss("/Parts/User/Styles/login.css")

@@ -1,0 +1,40 @@
+﻿.create-task-button{
+    text-align:center;
+    padding:0;
+    height:50px;
+    margin-bottom:10px;
+}
+.create-task-button a{
+    color:#fff;
+    display:block;
+    width:100%;
+    height:100%;
+    line-height:50px;
+}
+.create-task-button a:hover{
+    text-decoration:none;
+}
+.labels-button{
+    text-align:center;
+    padding:0;
+    height:50px;
+    line-height:50px;
+}
+
+.tasks-header div{
+    font-size:18px;
+    height:50px;
+    line-height:50px;
+    text-align:center;
+    color:#fff;
+    margin-bottom:10px;
+}
+.tasks-header div.open{
+    background-color:#8790b8;
+}
+.tasks-header div.in-progress{
+    background-color:#6d7496;
+}
+.tasks-header div.closed{
+    background-color:#445270;
+}

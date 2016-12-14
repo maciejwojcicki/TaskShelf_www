@@ -1,9 +1,16 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@{
+    ViewBag.body_class = "no-menu";
+}
 <div class="container">
-    @Html.Action("ProjectListView", "Project")
-    @Html.Action("CreateProjectView", "Project")
+    <div class="col-sm-6">
+        @Html.Action("CreateProjectView", "Project")
+    </div>
+    <div class="col-sm-6">
+        @Html.Action("ProjectListView", "Project")
+    </div>
 </div>
 
 

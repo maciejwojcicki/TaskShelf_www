@@ -2,15 +2,19 @@
     Layout = null;
 }
 <div id="projectList">
+    <h3>AKTUALNE PROJEKTY</h3>
     <div class="projectList">
         <div class="projects-container"></div>
     </div>
 </div>
 
 <script type="text/template" id="projectView-template">
-    <a><%=Name%></a>
+    <div class="project col-sm-4">
+        <a><%=Name%></a>
+    </div>
 
 </script>
 
 @Html.AddScript("/Parts/Project/Scripts/bb-projectList.js")
 @Html.ExecuteScript("new projectList.app();")
+@Html.AddCss("/Parts/Project/Styles/project.css")

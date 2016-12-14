@@ -37,12 +37,12 @@ namespace implementations.Services
                 throw new NotLoggedInException();
             }
 
-            var zzz = from o in context.Set<Project>()
+            var projects = from o in context.Set<Project>()
                       from k in o.Users
                       where k.UserId.Equals(user.UserId)
                       select new ProjectModel { Project = o };
 
-            return zzz.ToList() ;
+            return projects.ToList() ;
         }
         public void SaveProject(CreateProjectModel model, IPrincipal currentPrincipal)
         {

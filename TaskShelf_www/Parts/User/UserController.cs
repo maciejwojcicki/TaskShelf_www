@@ -93,6 +93,14 @@ namespace TaskShelf_www.Parts.User
             return View();
 
         }
-        
+        public ActionResult Logout()
+        {
+            FormsAuthentication.SignOut();
+            HttpCookie cookie = Request.Cookies[FormsAuthentication.FormsCookieName];
+            cookie.Expires = DateTime.Now.AddDays(-1);
+            cookie.Value = null;
+            Response.Cookies.Set(cookie);
+            return Redirect("/");
+        }
     }
 }

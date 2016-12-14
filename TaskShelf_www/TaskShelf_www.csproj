@@ -204,13 +204,15 @@
     <Content Include="Parts\Project\Scripts\bb-createProject.js" />
     <Content Include="Parts\Project\Scripts\bb-labelList.js" />
     <Content Include="Parts\Project\Scripts\bb-projectList.js" />
+    <Content Include="Parts\Project\Styles\project.css" />
     <Content Include="Parts\Task\Scripts\bb-createTask.js" />
     <Content Include="Parts\Task\Scripts\bb-taskCommentList.js" />
     <Content Include="Parts\Task\Scripts\bb-taskList.js" />
     <Content Include="Parts\Task\Scripts\bb-taskReview.js" />
-    <Content Include="Parts\Task\Styles\create-task.css" />
+    <Content Include="Parts\Task\Styles\task.css" />
     <Content Include="Parts\User\Scripts\bb-userLoginbox.js" />
     <Content Include="Parts\User\Scripts\bb-userRegisterbox.js" />
+    <Content Include="Parts\User\Styles\login.css" />
     <Content Include="Scripts\ajaxform.js" />
     <Content Include="Scripts\backbone.js" />
     <Content Include="Scripts\backbone.min.js" />
@@ -256,7 +258,9 @@
     <Content Include="Scripts\underscore.js" />
     <Content Include="Scripts\underscore.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -273,8 +277,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\Files\" />
-    <Folder Include="Parts\Project\Styles\" />
-    <Folder Include="Parts\User\Styles\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
